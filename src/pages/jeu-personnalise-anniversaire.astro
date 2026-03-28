@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import BoardMockup from '../components/BoardMockup.astro';
 
 const title = "Jeu de plateau personnalisé pour anniversaire — Cadeau unique";
 const description = "Créez un jeu de société personnalisé pour un anniversaire inoubliable. Les lieux marquants d'une vie sur un plateau de jeu.";
@@ -20,6 +21,9 @@ const description = "Créez un jeu de société personnalisé pour un anniversai
                 <h1>Un jeu de plateau personnalisé pour un anniversaire inoubliable</h1>
                 <p class="landing-subtitle">Retracez les lieux marquants d'une vie sur un plateau de jeu unique. Le cadeau parfait pour un 30e, 40e, 50e ou 60e anniversaire.</p>
                 <a href="#devis" class="btn btn-primary btn-lg">Demander un devis gratuit</a>
+            </div>
+            <div class="landing-visual">
+                <BoardMockup />
             </div>
         </section>
 
@@ -414,5 +418,28 @@ const description = "Créez un jeu de société personnalisé pour un anniversai
     }
     @media (max-width: 480px) {
         .ages-grid { grid-template-columns: 1fr; }
+    }
+
+    .landing-hero .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+    }
+    .landing-visual {
+        display: flex;
+        justify-content: center;
+    }
+    .landing-visual .board-mockup {
+        max-width: 380px;
+    }
+    @media (max-width: 768px) {
+        .landing-hero .container {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+        .landing-visual .board-mockup {
+            max-width: 300px;
+        }
     }
 </style>

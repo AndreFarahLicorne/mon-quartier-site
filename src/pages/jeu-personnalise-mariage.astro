@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import BoardMockup from '../components/BoardMockup.astro';
 
 const title = "Jeu de plateau personnalisé pour mariage — Cadeau original";
 const description = "Offrez un jeu de société unique pour votre mariage. Plateau personnalisé avec les lieux de votre histoire d'amour.";
@@ -20,6 +21,9 @@ const description = "Offrez un jeu de société unique pour votre mariage. Plate
                 <h1>Un jeu de plateau personnalisé pour votre mariage</h1>
                 <p class="landing-subtitle">Transformez votre histoire d'amour en jeu de société. Chaque case raconte un chapitre de votre vie à deux : première rencontre, premier rendez-vous, demande en mariage, salle de réception...</p>
                 <a href="#devis" class="btn btn-primary btn-lg">Demander un devis gratuit</a>
+            </div>
+            <div class="landing-visual">
+                <BoardMockup />
             </div>
         </section>
 
@@ -427,5 +431,28 @@ const description = "Offrez un jeu de société unique pour votre mariage. Plate
         .lieux-grid { grid-template-columns: 1fr; }
         .links-grid { grid-template-columns: 1fr; }
         .exemple-content { padding: 24px; }
+    }
+
+    .landing-hero .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+    }
+    .landing-visual {
+        display: flex;
+        justify-content: center;
+    }
+    .landing-visual .board-mockup {
+        max-width: 380px;
+    }
+    @media (max-width: 768px) {
+        .landing-hero .container {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+        .landing-visual .board-mockup {
+            max-width: 300px;
+        }
     }
 </style>

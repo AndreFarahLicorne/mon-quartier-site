@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import BoardMockup from '../components/BoardMockup.astro';
 
 const title = "Cadeau personnalisé original — Un jeu de société unique";
 const description = "À court d'idées cadeaux ? Offrez un jeu de plateau personnalisé avec les lieux et souvenirs qui comptent.";
@@ -20,6 +21,9 @@ const description = "À court d'idées cadeaux ? Offrez un jeu de plateau person
                 <h1>Le cadeau personnalisé qui sort vraiment de l'ordinaire</h1>
                 <p class="landing-subtitle">Fini les cadeaux banals ! Offrez un jeu de plateau unique, créé sur mesure avec les lieux et souvenirs qui comptent pour la personne que vous aimez.</p>
                 <a href="#devis" class="btn btn-primary btn-lg">Demander un devis gratuit</a>
+            </div>
+            <div class="landing-visual">
+                <BoardMockup />
             </div>
         </section>
 
@@ -456,5 +460,28 @@ const description = "À court d'idées cadeaux ? Offrez un jeu de plateau person
         .testimonials-double { grid-template-columns: 1fr; }
         .links-grid { grid-template-columns: 1fr; }
         .links-grid-4 { grid-template-columns: 1fr; }
+    }
+
+    .landing-hero .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+    }
+    .landing-visual {
+        display: flex;
+        justify-content: center;
+    }
+    .landing-visual .board-mockup {
+        max-width: 380px;
+    }
+    @media (max-width: 768px) {
+        .landing-hero .container {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+        .landing-visual .board-mockup {
+            max-width: 300px;
+        }
     }
 </style>
