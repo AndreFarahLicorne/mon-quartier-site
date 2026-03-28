@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout
@@ -14,6 +15,11 @@ import Footer from '../../components/Footer.astro';
             <!-- Hero -->
             <header class="article-hero">
                 <div class="container">
+                    <Breadcrumb items={[
+                        { label: "Accueil", href: "/" },
+                        { label: "Blog", href: "/blog/" },
+                        { label: "Histoire du Monopoly" }
+                    ]} />
                     <a href="/blog/" class="back-link">&larr; Retour au blog</a>
                     <div class="article-meta">
                         <span class="article-tag">Histoire</span>
@@ -66,7 +72,7 @@ import Footer from '../../components/Footer.astro';
                     <section id="propagation">
                         <h2>1904-1930 — Le jeu se propage dans l'ombre</h2>
                         <p>The Landlord's Game connaît un succès discret mais réel. Il se répand dans les <strong>cercles intellectuels</strong> : les clubs "Single Tax" (partisans de l'impôt unique de Henry George), les universités de la côte Est (Harvard, Wharton, Williams) et les communautés quakers.</p>
-                        <p>Au fil des années, le jeu est copié, modifié et transmis de main en main. Chaque groupe y apporte ses variantes : les noms des rues sont adaptés à la ville locale, les règles évoluent, de nouvelles mécaniques apparaissent. Des dizaines de versions artisanales circulent dans tout le pays.</p>
+                        <p>Au fil des années, le jeu est copié, modifié et transmis de main en main. Chaque groupe y apporte ses variantes : les noms des rues sont adaptés à la ville locale, <a href="/blog/regles-du-monopoly/">les règles</a> évoluent, de nouvelles mécaniques apparaissent. Des dizaines de versions artisanales circulent dans tout le pays.</p>
                         <p>C'est au cours de cette période que le jeu acquiert la plupart de ses caractéristiques modernes :</p>
                         <ul>
                             <li>Les <strong>noms de rues réelles</strong> (Atlantic City devient le plateau de référence)</li>
@@ -139,7 +145,7 @@ import Footer from '../../components/Footer.astro';
                         <p>Le géant américain Hasbro racheté Parker Brothers et devient propriétaire de la marque Monopoly. L'entreprise multiplie les éditions spéciales et les partenariats.</p>
 
                         <h3>Les années 2000 : l'ère numérique</h3>
-                        <p>Le Monopoly se décliné en jeux vidéo, applications mobiles et versions électroniques. En 2006, une édition sans billets de banque (remplacée par des cartes bancaires) fait débat parmi les puristes.</p>
+                        <p>Le Monopoly se décliné en jeux vidéo, applications mobiles et versions électroniques. En 2006, une édition sans billets de banque (remplacée par des cartes bancaires) fait débat parmi les puristes. Certaines variantes comme la cagnotte du <a href="/blog/parking-gratuit-monopoly/">Parking Gratuit</a> ou le double salaire de la <a href="/blog/case-depart-monopoly/">case Départ</a> sont nées de cette longue tradition de transmission orale des règles.</p>
 
                         <h3>2025 : 90 ans et toujours jeune</h3>
                         <p>Pour son 90e anniversaire, Hasbro lance une édition spéciale avec de nouvelles mécaniques et trois extensions inedites. Le jeu continue de se reinventér tout en gardant sa formule magique : <strong>acheter, construire, negocier et ruiner ses amis</strong>.</p>

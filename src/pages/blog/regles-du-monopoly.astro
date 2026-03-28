@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout
@@ -13,6 +14,11 @@ import Footer from '../../components/Footer.astro';
         <article class="article">
             <header class="article-hero">
                 <div class="container">
+                    <Breadcrumb items={[
+                        { label: "Accueil", href: "/" },
+                        { label: "Blog", href: "/blog/" },
+                        { label: "Règles du Monopoly" }
+                    ]} />
                     <a href="/blog/" class="back-link">&larr; Retour au blog</a>
                     <div class="article-meta">
                         <span class="article-tag">Règles</span>
@@ -243,13 +249,13 @@ import Footer from '../../components/Footer.astro';
                             <li><strong>Faillite envers un autre joueur</strong> : le créancier reçoit toutes les propriétés et l'argent restant du joueur en faillite</li>
                             <li><strong>Faillite envers la Banque</strong> : toutes les propriétés sont remises aux enchères</li>
                         </ul>
-                        <p>Le joueur en faillite est <strong>éliminé</strong> de la partie.</p>
+                        <p>Le joueur en faillite est <strong>éliminé</strong> de la partie. Envie de rendre vos parties encore plus uniques ? Consultez notre guide pour <a href="/blog/comment-personnaliser-son-monopoly/">personnaliser votre propre Monopoly</a>.</p>
                     </section>
 
                     <section id="victoire">
                         <h2>Conditions de victoire</h2>
                         <p>Le dernier joueur encore en jeu (qui n'a pas fait faillite) <strong>remporte la partie</strong>.</p>
-                        <p>Pour des parties plus courtes, vous pouvez fixer un temps limite au départ. A la fin du temps imparti, le joueur le plus riche (argent + valeur des propriétés + maisons et hôtels) gagne.</p>
+                        <p>Pour des parties plus courtes, vous pouvez fixer un temps limite au départ. A la fin du temps imparti, le joueur le plus riche (argent + valeur des propriétés + maisons et hôtels) gagne. Si vous souhaitez aller plus loin, découvrez <a href="/blog/histoire-du-monopoly/">l'histoire fascinante du Monopoly</a> et comment ce jeu mythique a évolué depuis plus d'un siècle.</p>
                     </section>
 
                     <section id="erreurs">

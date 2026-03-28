@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout
@@ -14,6 +15,11 @@ import Footer from '../../components/Footer.astro';
             <!-- Hero -->
             <header class="article-hero">
                 <div class="container">
+                    <Breadcrumb items={[
+                        { label: "Accueil", href: "/" },
+                        { label: "Blog", href: "/blog/" },
+                        { label: "Personnaliser son Monopoly" }
+                    ]} />
                     <a href="/blog/" class="back-link">&larr; Retour au blog</a>
                     <div class="article-meta">
                         <span class="article-tag">Guide</span>
@@ -50,7 +56,7 @@ import Footer from '../../components/Footer.astro';
 
                     <section id="pourquoi">
                         <h2>Pourquoi personnaliser un Monopoly ?</h2>
-                        <p>Le Monopoly est le jeu de société le plus vendu au monde. On y à tous joué en famille, entre amis ou lors de soirées interminables. Mais imaginez un instant : et si les rues du plateau, c'étaient <strong>les rues de votre quartier</strong> ? Si les gares portaient le nom de vos arrêts de bus ? Si les cartes Chance racontaient des anecdotes de votre groupe d'amis ?</p>
+                        <p>Le Monopoly est le jeu de société le plus vendu au monde — <a href="/blog/histoire-du-monopoly/">découvrez son histoire fascinante</a>. On y à tous joué en famille, entre amis ou lors de soirées interminables. Mais imaginez un instant : et si les rues du plateau, c'étaient <strong>les rues de votre quartier</strong> ? Si les gares portaient le nom de vos arrêts de bus ? Si les cartes Chance racontaient des anecdotes de votre groupe d'amis ?</p>
                         <p>C'est tout le principe du Monopoly personnalisé : transformer un classique universel en un <strong>objet unique et intime</strong>, chargé de souvenirs et de références qui parlent à ceux qui y jouent.</p>
                         <p>Le résultat est bien plus qu'un jeu : c'est un <strong>cadeau mémorable</strong>, une pièce de collection, et souvent le clou de la soirée quand on le sort pour la première fois.</p>
                     </section>
@@ -277,7 +283,7 @@ import Footer from '../../components/Footer.astro';
                             <li><strong>Respectez la hierarchie des prix</strong> — Les propriétés les moins cheres sont en marron, les plus cheres en bleu fonce. C'est cette progression qui fait la dynamique du jeu.</li>
                             <li><strong>Soignez les cartes Chance et Communauté</strong> — C'est la où vous pouvez être le plus créatif. Glissez des anecdotes, des defis, des références que seuls les joueurs comprendront.</li>
                             <li><strong>Pensez à la lisibilite</strong> — Sur un plateau, chaque case fait quelques centimètres. Les noms trop longs seront illisibles. Privilegiez des noms courts et percutants.</li>
-                            <li><strong>Testez les règles</strong> — Si vous modifiez les montants des loyers où des prix, faites une partie test pour vérifiér que le jeu reste équilibre.</li>
+                            <li><strong>Testez les règles</strong> — Si vous modifiez les montants des loyers où des prix, faites une partie test pour vérifiér que le jeu reste équilibre. Référez-vous aux <a href="/blog/regles-du-monopoly/">règles officielles du Monopoly</a> pour garder un bon équilibre.</li>
                             <li><strong>Prévoyez les délais</strong> — Que ce soit en DIY ou via un professionnel, la création d'un Monopoly personnalisé prend du temps. Commencez au moins 1 mois avant la date souhaitée.</li>
                         </ol>
                     </section>

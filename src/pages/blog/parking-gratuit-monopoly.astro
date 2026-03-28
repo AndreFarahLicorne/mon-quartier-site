@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout
@@ -13,6 +14,11 @@ import Footer from '../../components/Footer.astro';
         <article class="article">
             <header class="article-hero">
                 <div class="container">
+                    <Breadcrumb items={[
+                        { label: "Accueil", href: "/" },
+                        { label: "Blog", href: "/blog/" },
+                        { label: "Parking Gratuit Monopoly" }
+                    ]} />
                     <a href="/blog/" class="back-link">&larr; Retour au blog</a>
                     <div class="article-meta">
                         <span class="article-tag">Règles</span>
@@ -56,7 +62,7 @@ import Footer from '../../components/Footer.astro';
                         </blockquote>
 
                         <p>C'est aussi simple que ça. <strong>Il ne se passe rien.</strong> Pas d'argent, pas de bonus, pas de cagnotte. Vous posez votre pion, vous attendez votre prochain tour, et c'est tout.</p>
-                        <p>L'argent des taxes (Impôt sur le revenu et Taxe de luxe) et des amendes va <strong>directement à la Banque</strong>, pas au centre du plateau.</p>
+                        <p>L'argent des taxes (Impôt sur le revenu et Taxe de luxe) et des amendes va <strong>directement à la Banque</strong>, pas au centre du plateau. Consultez notre <a href="/blog/regles-du-monopoly/">guide complet des règles du Monopoly</a> pour retrouver toutes les règles officielles.</p>
                     </section>
 
                     <section id="pourquoi">
@@ -64,7 +70,7 @@ import Footer from '../../components/Footer.astro';
                         <p>Si quasiment tout le monde joue avec une cagnotte au Parking Gratuit, c'est pour plusieurs raisons :</p>
                         <ul>
                             <li><strong>Le bouche-a-oreille</strong> : la "règle" se transmet de famille en famille sans que personne ne vérifie dans la notice</li>
-                            <li><strong>Le nom de la case</strong> : "Parking Gratuit" donne l'impression qu'on gagne quelque chose, alors que ça signifie simplement "vous vous garez sans payer"</li>
+                            <li><strong>Le nom de la case</strong> : "Parking Gratuit" donne l'impression qu'on gagne quelque chose, alors que ça signifie simplement "vous vous garez sans payer". C'est le même type de confusion que pour <a href="/blog/case-depart-monopoly/">la case Départ et le mythe du double salaire</a></li>
                             <li><strong>L'édition Junior</strong> : dans le Monopoly Junior (pour enfants), les taxes alimentent effectivement un pot que le joueur au Parking récupère. Beaucoup de joueurs ont appris avec cette version et ont gardé la règle</li>
                             <li><strong>Hasbro lui-même</strong> : en 2014, Hasbro a lancé une édition "Règles Maison" qui intégrait les variantes les plus populaires, dont la cagnotte du Parking. Cela a légitimé la confusion</li>
                         </ul>

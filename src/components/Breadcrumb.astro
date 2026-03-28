@@ -1,0 +1,79 @@
+---
+interface BreadcrumbItem {
+    label: string;
+    href?: string;
+}
+
+interface Props {
+    items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.label,
+        ...(item.href ? { "item": new URL(item.href, Astro.site || 'https://mon-quartier.fr').href } : {})
+    }))
+};
+---
+
+<nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <ol class="breadcrumb-list">
+        {items.map((item, index) => (
+            <li class="breadcrumb-item">
+                {index > 0 && <span class="breadcrumb-separator" aria-hidden="true">&rsaquo;</span>}
+                {item.href && index < items.length - 1 ? (
+                    <a href={item.href}>{item.label}</a>
+                ) : (
+                    <span aria-current={index === items.length - 1 ? "page" : undefined}>{item.label}</span>
+                )}
+            </li>
+        ))}
+    </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+<style>
+    .breadcrumb {
+        padding: 8px 0;
+    }
+    .breadcrumb-list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 0.85rem;
+        color: #888;
+        gap: 0;
+    }
+    .breadcrumb-item {
+        display: flex;
+        align-items: center;
+        gap: 0;
+    }
+    .breadcrumb-separator {
+        margin: 0 8px;
+        color: #aaa;
+        font-size: 0.9rem;
+    }
+    .breadcrumb-item a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .breadcrumb-item a:hover {
+        color: var(--color-primary);
+        text-decoration: underline;
+    }
+    .breadcrumb-item span[aria-current="page"] {
+        color: #999;
+    }
+</style>
