@@ -1,0 +1,173 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const articles = [
+    {
+        title: "Règles du Monopoly : le guide complet pour bien jouer",
+        slug: "regles-du-monopoly",
+        date: "28 mars 2026",
+        excerpt: "Toutes les règles officielles expliquees clairement : achat, encheres, construction, loyers, prison, hypothèque... Plus les 5 fausses règles que tout le monde applique.",
+        readTime: "12 min",
+        tag: "Règles",
+        gradient: "linear-gradient(135deg, #2E7D32, #1B5E20)",
+    },
+    {
+        title: "Parking Gratuit au Monopoly : la vraie règle et toutes les variantes",
+        slug: "parking-gratuit-monopoly",
+        date: "28 mars 2026",
+        excerpt: "Non, on ne gagne pas d'argent en tombant sur Parking Gratuit. Découvrez la règle officielle et les 4 variantes maison les plus populaires : cagnotte, prime fixe, jackpot...",
+        readTime: "6 min",
+        tag: "Règles",
+        gradient: "linear-gradient(135deg, #E65100, #BF360C)",
+    },
+    {
+        title: "Case Depart Monopoly : gagne-t-on le double en tombant pile dessus ?",
+        slug: "case-depart-monopoly",
+        date: "28 mars 2026",
+        excerpt: "400 euros si on tombe pile sur Depart ? C'est faux. Découvrez la vraie regle, les cas où on touche (ou pas) les 200 euros, et les variantes maison.",
+        readTime: "5 min",
+        tag: "Règles",
+        gradient: "linear-gradient(135deg, #1565C0, #0D47A1)",
+    },
+    {
+        title: "L'histoire du Monopoly : des origines controversees au jeu le plus vendu au monde",
+        slug: "histoire-du-monopoly",
+        date: "28 mars 2026",
+        excerpt: "250 millions d'exemplaires, une inventrice oubliee, un imposteur devenu millionnaire et 120 ans de rebondissements. Découvrez la véritable histoire du Monopoly.",
+        readTime: "10 min",
+        tag: "Histoire",
+        gradient: "linear-gradient(135deg, #6A1B9A, #4A148C)",
+    },
+    {
+        title: "Comment personnaliser son Monopoly soi-même : le guide complet",
+        slug: "comment-personnaliser-son-monopoly",
+        date: "28 mars 2026",
+        excerpt: "Découvrez toutes les méthodes pour créer un Monopoly unique à votre image : DIY, outils en ligne ou service professionnel. Plateau, cartes, pions, billets... on vous explique tout.",
+        readTime: "8 min",
+        tag: "Guide",
+        gradient: "linear-gradient(135deg, #2d6a4f, #40916c)",
+    },
+];
+---
+
+<Layout
+    title="Blog — Conseils et inspirations"
+    description="Retrouvez nos articles et guides pour créer votre jeu de plateau personnalisé inspiré du Monopoly. Idees, tutoriels et inspirations."
+>
+    <Navbar />
+    <main>
+        <section class="blog-hero">
+            <div class="container">
+                <h1>Le Blog Mon Quartier</h1>
+                <p>Conseils, inspirations et tutoriels pour créer votre jeu personnalisé.</p>
+            </div>
+        </section>
+
+        <section class="blog-list">
+            <div class="container">
+                <div class="articles-grid">
+                    {articles.map(article => (
+                        <a href={`/blog/${article.slug}/`} class="article-card">
+                            <div class="article-card-image" style={`background: ${article.gradient || 'linear-gradient(135deg, #2d6a4f, #40916c)'};`}>
+                                <span class="article-tag">{article.tag}</span>
+                            </div>
+                            <div class="article-card-body">
+                                <time>{article.date}</time>
+                                <h2>{article.title}</h2>
+                                <p>{article.excerpt}</p>
+                                <span class="read-more">Lire l'article — {article.readTime}</span>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
+</Layout>
+
+<style>
+    .blog-hero {
+        padding: 140px 0 60px;
+        background: linear-gradient(135deg, #f0f7f0 0%, #faf6f1 100%);
+        text-align: center;
+    }
+    .blog-hero h1 {
+        font-family: var(--font-heading);
+        font-size: 2.8rem;
+        color: var(--color-primary-dark);
+        margin-bottom: 12px;
+    }
+    .blog-hero p {
+        font-size: 1.15rem;
+        color: var(--color-text-light);
+    }
+    .blog-list {
+        padding: 60px 0 100px;
+    }
+    .articles-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 32px;
+    }
+    .article-card {
+        background: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+    }
+    .article-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+    .article-card-image {
+        height: 200px;
+        display: flex;
+        align-items: flex-end;
+        padding: 16px;
+    }
+    .article-tag {
+        background: rgba(255,255,255,0.9);
+        color: var(--color-primary-dark);
+        padding: 4px 14px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    .article-card-body {
+        padding: 24px;
+    }
+    .article-card-body time {
+        font-size: 0.8rem;
+        color: var(--color-text-light);
+    }
+    .article-card-body h2 {
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        color: var(--color-primary-dark);
+        margin: 8px 0 12px;
+        line-height: 1.3;
+    }
+    .article-card-body p {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+    .read-more {
+        font-family: var(--font-heading);
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--color-cta);
+    }
+    @media (max-width: 768px) {
+        .blog-hero { padding: 110px 0 40px; }
+        .blog-hero h1 { font-size: 2rem; }
+        .articles-grid { grid-template-columns: 1fr; }
+    }
+</style>

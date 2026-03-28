@@ -1,0 +1,73 @@
+<section class="section section-cream" id="devis">
+    <div class="container">
+        <div class="section-header">
+            <h2>Demandez votre devis gratuit</h2>
+            <p>Décrivez-nous votre projet et recevez une proposition personnalisée sous 48h.</p>
+        </div>
+        <div class="form-container">
+            <form id="devisForm" class="devis-form" aria-label="Formulaire de demande de devis">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nom">Nom complet *</label>
+                        <input type="text" id="nom" name="nom" required placeholder="Votre nom" autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="votre@email.com" autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Téléphone</label>
+                        <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" autocomplete="tel">
+                    </div>
+                    <div class="form-group">
+                        <label for="occasion">Type de projet *</label>
+                        <select id="occasion" name="occasion" required>
+                            <option value="" disabled selected>Choisissez une occasion</option>
+                            <option value="quartier">Jeu de quartier / ville</option>
+                            <option value="mariage">Mariage</option>
+                            <option value="anniversaire">Anniversaire</option>
+                            <option value="entreprise">Entreprise / Team building</option>
+                            <option value="association">Association / Comité</option>
+                            <option value="cadeau">Cadeau personnalisé</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantité">Nombre d'exemplaires souhaités</label>
+                        <select id="quantité" name="quantité">
+                            <option value="" disabled selected>Sélectionnez une quantité</option>
+                            <option value="1">1 exemplaire</option>
+                            <option value="2-5">2 à 5 exemplaires</option>
+                            <option value="6-20">6 à 20 exemplaires</option>
+                            <option value="21-50">21 à 50 exemplaires</option>
+                            <option value="51-100">51 à 100 exemplaires</option>
+                            <option value="100+">Plus de 100 exemplaires</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Budget estimé</label>
+                        <select id="budget" name="budget">
+                            <option value="" disabled selected>Sélectionnez un budget</option>
+                            <option value="< 100€">Moins de 100 €</option>
+                            <option value="100-300€">100 — 300 €</option>
+                            <option value="300-500€">300 — 500 €</option>
+                            <option value="500-1000€">500 — 1 000 €</option>
+                            <option value="> 1000€">Plus de 1 000 €</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group form-group-full">
+                    <label for="message">Décrivez votre projet *</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Parlez-nous de votre quartier, de l'occasion, de vos idées de personnalisation..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-submit">Envoyer ma demande de devis</button>
+                <p class="form-note">* Champs obligatoires — Réponse garantie sous 48h</p>
+            </form>
+            <div id="formSuccess" class="form-success" hidden>
+                <div class="success-icon">✅</div>
+                <h3>Demande envoyée !</h3>
+                <p>Merci pour votre demande. Nous vous répondrons sous 48h avec une proposition personnalisée.</p>
+            </div>
+        </div>
+    </div>
+</section>

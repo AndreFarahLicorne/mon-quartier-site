@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://monquartier-jeu.fr/sitemap-index.xml

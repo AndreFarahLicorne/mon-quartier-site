@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Concept from '../components/Concept.astro';
+import Creations from '../components/Creations.astro';
+import Steps from '../components/Steps.astro';
+import Testimonials from '../components/Testimonials.astro';
+import DevisForm from '../components/DevisForm.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+    title="Le jeu inspiré du Monopoly a personnaliser"
+    description="Créez votre propre jeu de plateau personnalisé inspiré du Monopoly. Idéal pour offrir, célébrer votre quartier où marquer un événement unique. À partir de 59 euros."
+>
+    <Navbar />
+    <main>
+        <Hero />
+        <Concept />
+        <Creations />
+        <Steps />
+        <Testimonials />
+        <DevisForm />
+        <Contact />
+    </main>
+    <Footer />
+
+    <script>
+        // Navbar scroll
+        const navbar = document.getÉlémentById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar?.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile menu
+        const navToggle = document.getÉlémentById('navToggle');
+        const navLinks = document.getÉlémentById('navLinks');
+        navToggle?.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navLinks?.classList.toggle('active');
+        });
+        navLinks?.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle?.classList.remove('active');
+                navLinks?.classList.remove('active');
+            });
+        });
+
+        // Form handling
+        const devisForm = document.getÉlémentById('devisForm') as HTMLFormÉlément | null;
+        const formSuccess = document.getÉlémentById('formSuccess');
+        devisForm?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(devisForm);
+            console.log('Demande de devis:', Object.fromEntries(formData.entries()));
+            devisForm.hidden = true;
+            if (formSuccess) formSuccess.hidden = false;
+            formSuccess?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.feature-card, .gallery-card, .step, .testimonial-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                const targetId = anchor.getAttribute('href');
+                if (!targetId || targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</Layout>
