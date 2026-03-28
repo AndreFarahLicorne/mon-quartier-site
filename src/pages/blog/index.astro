@@ -79,11 +79,21 @@ const articles = [
             </div>
         </section>
 
+        <nav class="blog-categories">
+            <div class="container">
+                <button class="cat-btn active" data-cat="all">Tous</button>
+                <button class="cat-btn" data-cat="Règles">Règles</button>
+                <button class="cat-btn" data-cat="Guide">Guide</button>
+                <button class="cat-btn" data-cat="Inspiration">Inspiration</button>
+                <button class="cat-btn" data-cat="Histoire">Histoire</button>
+            </div>
+        </nav>
+
         <section class="blog-list">
             <div class="container">
                 <div class="articles-grid">
                     {articles.map(article => (
-                        <a href={`/blog/${article.slug}/`} class="article-card">
+                        <a href={`/blog/${article.slug}/`} class="article-card" data-cat={article.tag}>
                             <div class="article-card-image" style={`background: ${article.gradient || 'linear-gradient(135deg, #2d6a4f, #40916c)'};`}>
                                 <span class="article-tag">{article.tag}</span>
                             </div>
@@ -100,6 +110,23 @@ const articles = [
         </section>
     </main>
     <Footer />
+
+    <script>
+        document.querySelectorAll('.cat-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.cat-btn.active')?.classList.remove('active');
+                btn.classList.add('active');
+                const cat = btn.getAttribute('data-cat');
+                document.querySelectorAll('.article-card').forEach(card => {
+                    if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
 </Layout>
 
 <style>
@@ -117,6 +144,44 @@ const articles = [
     .blog-hero p {
         font-size: 1.15rem;
         color: var(--color-text-light);
+    }
+    .blog-categories {
+        padding: 20px 0;
+        background: var(--color-bg);
+        border-bottom: 1px solid var(--color-border);
+        position: sticky;
+        top: 72px;
+        z-index: 10;
+    }
+    .blog-categories .container {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .cat-btn {
+        font-family: var(--font-heading);
+        font-weight: 600;
+        font-size: 0.85rem;
+        padding: 8px 20px;
+        border-radius: 50px;
+        border: 2px solid var(--color-border);
+        background: var(--color-bg);
+        color: var(--color-text-light);
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    .cat-btn:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+    }
+    .cat-btn.active {
+        background: var(--color-primary);
+        border-color: var(--color-primary);
+        color: #fff;
+    }
+    .article-card.hidden {
+        display: none;
     }
     .blog-list {
         padding: 60px 0 100px;

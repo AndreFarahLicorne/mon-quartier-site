@@ -183,8 +183,6 @@ const description = "Offrez un jeu de société unique pour votre mariage. Plate
             </div>
         </section>
 
-        <LatestArticles />
-
         <!-- Maillage interne -->
         <section class="section section-cream">
             <div class="container">
@@ -198,15 +196,20 @@ const description = "Offrez un jeu de société unique pour votre mariage. Plate
                         <h3>Jeu pour anniversaire</h3>
                         <p>Les lieux marquants d'une vie sur un plateau de jeu unique.</p>
                     </a>
+                    <a href="/jeu-personnalise-entreprise/" class="link-card">
+                        <span class="link-icon">🏢</span>
+                        <h3>Jeu pour entreprise</h3>
+                        <p>Renforcez la cohésion d'équipe avec un jeu aux couleurs de votre entreprise.</p>
+                    </a>
+                    <a href="/jeu-de-quartier-personnalise/" class="link-card">
+                        <span class="link-icon">🏘️</span>
+                        <h3>Jeu de quartier</h3>
+                        <p>Votre quartier transformé en jeu pour associations et collectivités.</p>
+                    </a>
                     <a href="/cadeau-personnalise-original/" class="link-card">
                         <span class="link-icon">🎁</span>
                         <h3>Cadeau personnalisé original</h3>
                         <p>Le cadeau qui sort vraiment de l'ordinaire pour toutes les occasions.</p>
-                    </a>
-                    <a href="/" class="link-card">
-                        <span class="link-icon">🏘️</span>
-                        <h3>Retour à l'accueil</h3>
-                        <p>Découvrez tout l'univers Mon Quartier et nos créations.</p>
                     </a>
                 </div>
             </div>
@@ -279,6 +282,8 @@ const description = "Offrez un jeu de société unique pour votre mariage. Plate
                 </div>
             </div>
         </section>
+
+        <LatestArticles />
     </main>
     <Footer />
 
@@ -416,7 +421,7 @@ const description = "Offrez un jeu de société unique pour votre mariage. Plate
     }
     .links-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 24px;
     }
     .link-card {
@@ -458,6 +463,9 @@ const description = "Offrez un jeu de société unique pour votre mariage. Plate
         .lieux-grid { grid-template-columns: 1fr; }
         .links-grid { grid-template-columns: 1fr; }
         .exemple-content { padding: 24px; }
+    }
+    @media (max-width: 1024px) and (min-width: 769px) {
+        .links-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
 </style>

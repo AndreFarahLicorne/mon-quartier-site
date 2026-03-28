@@ -11,11 +11,74 @@
         </button>
         <ul class="nav-links" id="navLinks" role="navigation">
             <li><a href="/#accueil">Accueil</a></li>
-            <li><a href="/#concept">Le concept</a></li>
-            <li><a href="/#creations">Nos créations</a></li>
-            <li><a href="/#comment-ca-marche">Comment ça marche</a></li>
+            <li class="has-dropdown">
+                <a href="#">Nos jeux</a>
+                <ul class="dropdown">
+                    <li><a href="/jeu-personnalise-mariage/"><span class="dropdown-icon">💒</span> Jeu de mariage</a></li>
+                    <li><a href="/jeu-personnalise-anniversaire/"><span class="dropdown-icon">🎂</span> Jeu d'anniversaire</a></li>
+                    <li><a href="/jeu-personnalise-entreprise/"><span class="dropdown-icon">🏢</span> Jeu d'entreprise</a></li>
+                    <li><a href="/jeu-de-quartier-personnalise/"><span class="dropdown-icon">🏘️</span> Jeu de quartier</a></li>
+                    <li><a href="/cadeau-personnalise-original/"><span class="dropdown-icon">🎁</span> Cadeau original</a></li>
+                </ul>
+            </li>
             <li><a href="/blog/">Blog</a></li>
+            <li><a href="/#contact">Contact</a></li>
             <li><a href="/#devis" class="btn btn-nav">Demander un devis</a></li>
         </ul>
     </div>
 </nav>
+
+<style>
+    .has-dropdown {
+        position: relative;
+    }
+    .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-8px);
+        list-style: none;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        padding: 12px 0;
+        min-width: 260px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s ease;
+        z-index: 100;
+    }
+    .has-dropdown:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+    .dropdown li a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+        transition: background 0.2s;
+    }
+    .dropdown li a:hover {
+        background: rgba(45, 106, 79, 0.06);
+    }
+    .dropdown-icon {
+        font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+        .dropdown {
+            position: static;
+            transform: none;
+            opacity: 1;
+            visibility: visible;
+            box-shadow: none;
+            background: transparent;
+            padding: 0 0 0 16px;
+            min-width: auto;
+        }
+    }
+</style>
