@@ -32,11 +32,12 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
             </header>
 
             <!-- Table des matières -->
-            <nav class="toc" aria-label="Table des matières">
-                <div class="container">
-                    <details open>
-                        <summary><strong>Sommaire</strong></summary>
-                        <ol>
+            <div class="article-body">
+                <div class="container article-layout">
+                    <aside class="toc-sidebar" aria-label="Table des matières">
+                        <div class="toc-sticky">
+                            <h3 class="toc-title">Sommaire</h3>
+                        <ul class="toc-list">
                             <li><a href="#origines">1903 — Une femme, une idée politique</a></li>
                             <li><a href="#propagation">1904-1930 — Le jeu se propage dans l'ombre</a></li>
                             <li><a href="#darrow">1933 — Charles Darrow entre en scène</a></li>
@@ -47,7 +48,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
                             <li><a href="#chiffres">Le Monopoly en chiffres</a></li>
                             <li><a href="#éditions">Les éditions les plus folles</a></li>
                             <li><a href="#personnalisé">Et aujourd'hui : le Monopoly personnalisé</a></li>
-                        </ol>
+                        </ul>
                     </details>
                 </div>
             </nav>
@@ -215,6 +216,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
                         </div>
                     </section>
 
+                    </div>
                 </div>
             </div>
         </article>
@@ -459,6 +461,8 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
     @media (max-width: 768px) {
         .article-hero { padding: 110px 0 40px; }
         .article-hero h1 { font-size: 1.8rem; }
+        .article-layout { grid-template-columns: 1fr; gap: 0; }
+        .toc-sticky { position: static; margin-bottom: 24px; }
         .stats-grid { grid-template-columns: repeat(2, 1fr); }
         .cta-box { padding: 28px 20px; }
         .cta-buttons { flex-direction: column; align-items: center; }

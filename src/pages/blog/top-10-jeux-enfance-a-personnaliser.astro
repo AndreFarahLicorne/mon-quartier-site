@@ -30,11 +30,12 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
                 </div>
             </header>
 
-            <nav class="toc" aria-label="Table des matières">
-                <div class="container">
-                    <details open>
-                        <summary><strong>Sommaire</strong></summary>
-                        <ol>
+            <div class="article-body">
+                <div class="container article-layout">
+                    <aside class="toc-sidebar" aria-label="Table des matières">
+                        <div class="toc-sticky">
+                            <h3 class="toc-title">Sommaire</h3>
+                        <ul class="toc-list">
                             <li><a href="#monopoly">1. Le Monopoly</a></li>
                             <li><a href="#trivial-pursuit">2. Le Trivial Pursuit</a></li>
                             <li><a href="#jeu-de-loie">3. Le Jeu de l'Oie</a></li>
@@ -46,13 +47,10 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
                             <li><a href="#pictionary">9. Le Pictionary</a></li>
                             <li><a href="#7-familles">10. Le Jeu des 7 Familles</a></li>
                             <li><a href="#quel-jeu-choisir">Quel jeu personnaliser en premier ?</a></li>
-                        </ol>
-                    </details>
-                </div>
-            </nav>
-
-            <div class="article-content">
-                <div class="container content-container">
+                        </ul>
+                        </div>
+                    </aside>
+                    <div class="article-main">
 
                     <p class="intro-text">On a tous grandi avec ces boîtes usées, aux coins cornés, qu'on ressortait le dimanche après-midi ou les soirs de vacances. Ces jeux font partie de notre ADN familial. Et si on leur donnait une seconde vie — en version 100% personnalisée ?</p>
 
@@ -347,6 +345,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
                         </div>
                     </section>
 
+                    </div>
                 </div>
             </div>
         </article>
@@ -372,13 +371,50 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
     .article-meta time, .article-read { font-size: 0.85rem; color: var(--color-text-light); }
     .article-hero h1 { font-family: var(--font-heading); font-size: 2.4rem; color: var(--color-primary-dark); max-width: 820px; line-height: 1.2; margin-bottom: 16px; }
     .article-intro { font-size: 1.15rem; color: var(--color-text-light); max-width: 720px; line-height: 1.7; }
-    .toc { padding: 24px 0; background: var(--color-bg-light); border-bottom: 1px solid var(--color-border); }
-    .toc summary { cursor: pointer; font-family: var(--font-heading); font-size: 1rem; color: var(--color-primary-dark); }
-    .toc ol { margin: 12px 0 0 20px; display: flex; flex-direction: column; gap: 6px; }
-    .toc a { font-size: 0.9rem; color: var(--color-primary); }
-    .toc a:hover { text-decoration: underline; }
-    .content-container { max-width: 780px; }
-    .article-content { padding: 50px 0 80px; }
+    .article-body { padding: 40px 0 80px; }
+    .article-layout {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: 48px;
+        max-width: 1100px;
+    }
+    .toc-sidebar {
+        align-self: start;
+    }
+    .toc-sticky {
+        position: sticky;
+        top: 90px;
+        background: var(--color-bg-light);
+        border-radius: var(--radius);
+        padding: 20px;
+        border: 1px solid var(--color-border);
+    }
+    .toc-title {
+        font-family: var(--font-heading);
+        font-size: 0.95rem;
+        color: var(--color-primary-dark);
+        margin-bottom: 12px;
+    }
+    .toc-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    .toc-list li a {
+        font-size: 0.82rem;
+        color: var(--color-text-light);
+        line-height: 1.4;
+        display: block;
+        padding: 3px 0;
+        transition: color 0.2s;
+    }
+    .toc-list li a:hover {
+        color: var(--color-primary);
+    }
+    .article-main { max-width: 780px; }
     .article-content section { margin-bottom: 16px; }
     .article-content h2 { font-family: var(--font-heading); font-size: 1.6rem; color: var(--color-primary-dark); margin: 0 0 12px; }
     .article-content h3 { font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-primary-dark); margin: 20px 0 8px; }
@@ -450,6 +486,8 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
     @media (max-width: 768px) {
         .article-hero { padding: 110px 0 40px; }
         .article-hero h1 { font-size: 1.8rem; }
+        .article-layout { grid-template-columns: 1fr; gap: 0; }
+        .toc-sticky { position: static; margin-bottom: 24px; }
         .game-card { flex-direction: column; gap: 16px; }
         .game-rank { width: 44px; height: 44px; font-size: 1.2rem; }
         .cta-box { padding: 28px 20px; }

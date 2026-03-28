@@ -32,11 +32,12 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
             </header>
 
             <!-- Table des matières -->
-            <nav class="toc" aria-label="Table des matières">
-                <div class="container">
-                    <details open>
-                        <summary><strong>Sommaire</strong></summary>
-                        <ol>
+            <div class="article-body">
+                <div class="container article-layout">
+                    <aside class="toc-sidebar" aria-label="Table des matières">
+                        <div class="toc-sticky">
+                            <h3 class="toc-title">Sommaire</h3>
+                        <ul class="toc-list">
                             <li><a href="#pourquoi">Pourquoi personnaliser un Monopoly ?</a></li>
                             <li><a href="#éléments">Les éléments à personnaliser</a></li>
                             <li><a href="#méthode-diy">Méthode 1 : Le 100% fait maison (DIY)</a></li>
@@ -45,7 +46,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
                             <li><a href="#comparatif">Comparatif des 3 méthodes</a></li>
                             <li><a href="#occasions">Pour quelles occasions ?</a></li>
                             <li><a href="#conseils">Nos conseils pour réussir</a></li>
-                        </ol>
+                        </ul>
                     </details>
                 </div>
             </nav>
@@ -108,7 +109,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
                             <li><strong>Créer les cartes</strong> — Imprimez les 28 cartes de propriété, les 16 cartes Chance et les 16 cartes Communauté. Découpez et plastifiez si possible.</li>
                             <li><strong>Fabriquer les billets</strong> — Découpez des rectangles de papier coloré (un coloris par coupure) et inscrivez les montants.</li>
                             <li><strong>Assembler</strong> — Pliez le plateau en 2 où 4 pour le rangement, préparez les pions, et le tour est joué.</li>
-                        </ol>
+                        </ul>
 
                         <h3>Avantages et inconvénients</h3>
                         <div class="pros-cons">
@@ -142,7 +143,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
                             <li>Vous remplissez les noms des cases, les textes des cartes, les prix</li>
                             <li>Vous uploadez vos photos où illustrations</li>
                             <li>Le site généré les fichiers d'impression où vous livre le jeu</li>
-                        </ol>
+                        </ul>
 
                         <h3>Avantages et inconvénients</h3>
                         <div class="pros-cons">
@@ -176,7 +177,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
                             <li>Un graphiste créé la maquette complète du jeu</li>
                             <li>Vous validez (avec autant d'allers-retours que nécessaire)</li>
                             <li>Le jeu est imprime avec des materiaux professionnels et livre chez vous</li>
-                        </ol>
+                        </ul>
 
                         <h3>Avantages et inconvénients</h3>
                         <div class="pros-cons">
@@ -285,7 +286,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
                             <li><strong>Pensez à la lisibilite</strong> — Sur un plateau, chaque case fait quelques centimètres. Les noms trop longs seront illisibles. Privilegiez des noms courts et percutants.</li>
                             <li><strong>Testez les règles</strong> — Si vous modifiez les montants des loyers où des prix, faites une partie test pour vérifiér que le jeu reste équilibre. Référez-vous aux <a href="/blog/regles-du-monopoly/">règles officielles du Monopoly</a> pour garder un bon équilibre.</li>
                             <li><strong>Prévoyez les délais</strong> — Que ce soit en DIY ou via un professionnel, la création d'un Monopoly personnalisé prend du temps. Commencez au moins 1 mois avant la date souhaitée.</li>
-                        </ol>
+                        </ul>
                     </section>
 
                     <!-- CTA final -->
@@ -303,6 +304,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
                         </div>
                     </section>
 
+                    </div>
                 </div>
             </div>
         </article>
@@ -534,6 +536,8 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
     @media (max-width: 768px) {
         .article-hero { padding: 110px 0 40px; }
         .article-hero h1 { font-size: 1.8rem; }
+        .article-layout { grid-template-columns: 1fr; gap: 0; }
+        .toc-sticky { position: static; margin-bottom: 24px; }
         .pros-cons { grid-template-columns: 1fr; }
         .cta-box { padding: 28px 20px; }
         .cta-buttons { flex-direction: column; align-items: center; }

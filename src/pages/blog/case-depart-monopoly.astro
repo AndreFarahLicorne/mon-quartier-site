@@ -30,11 +30,12 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
                 </div>
             </header>
 
-            <nav class="toc" aria-label="Table des matières">
-                <div class="container">
-                    <details open>
-                        <summary><strong>Sommaire</strong></summary>
-                        <ol>
+            <div class="article-body">
+                <div class="container article-layout">
+                    <aside class="toc-sidebar" aria-label="Table des matières">
+                        <div class="toc-sticky">
+                            <h3 class="toc-title">Sommaire</h3>
+                        <ul class="toc-list">
                             <li><a href="#regle-officielle">La règle officielle</a></li>
                             <li><a href="#double-salaire">Le mythe du double salaire</a></li>
                             <li><a href="#quand-toucher">Quand touche-t-on les 200 euros ?</a></li>
@@ -42,13 +43,10 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
                             <li><a href="#variantes">Les variantes maison</a></li>
                             <li><a href="#stratégie">La case Départ dans la stratégie</a></li>
                             <li><a href="#faq">Questions fréquentes</a></li>
-                        </ol>
-                    </details>
-                </div>
-            </nav>
-
-            <div class="article-content">
-                <div class="container content-container">
+                        </ul>
+                        </div>
+                    </aside>
+                    <div class="article-main">
 
                     <section id="regle-officielle">
                         <h2>La règle officielle</h2>
@@ -204,6 +202,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
                         </div>
                     </section>
 
+                    </div>
                 </div>
             </div>
         </article>
@@ -229,13 +228,50 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
     .article-meta time, .article-read { font-size: 0.85rem; color: var(--color-text-light); }
     .article-hero h1 { font-family: var(--font-heading); font-size: 2.4rem; color: var(--color-primary-dark); max-width: 820px; line-height: 1.2; margin-bottom: 16px; }
     .article-intro { font-size: 1.15rem; color: var(--color-text-light); max-width: 720px; line-height: 1.7; }
-    .toc { padding: 24px 0; background: var(--color-bg-light); border-bottom: 1px solid var(--color-border); }
-    .toc summary { cursor: pointer; font-family: var(--font-heading); font-size: 1rem; color: var(--color-primary-dark); }
-    .toc ol { margin: 12px 0 0 20px; display: flex; flex-direction: column; gap: 6px; }
-    .toc a { font-size: 0.9rem; color: var(--color-primary); }
-    .toc a:hover { text-decoration: underline; }
-    .content-container { max-width: 780px; }
-    .article-content { padding: 50px 0 80px; }
+    .article-body { padding: 40px 0 80px; }
+    .article-layout {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: 48px;
+        max-width: 1100px;
+    }
+    .toc-sidebar {
+        align-self: start;
+    }
+    .toc-sticky {
+        position: sticky;
+        top: 90px;
+        background: var(--color-bg-light);
+        border-radius: var(--radius);
+        padding: 20px;
+        border: 1px solid var(--color-border);
+    }
+    .toc-title {
+        font-family: var(--font-heading);
+        font-size: 0.95rem;
+        color: var(--color-primary-dark);
+        margin-bottom: 12px;
+    }
+    .toc-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    .toc-list li a {
+        font-size: 0.82rem;
+        color: var(--color-text-light);
+        line-height: 1.4;
+        display: block;
+        padding: 3px 0;
+        transition: color 0.2s;
+    }
+    .toc-list li a:hover {
+        color: var(--color-primary);
+    }
+    .article-main { max-width: 780px; }
     .article-content section { margin-bottom: 48px; }
     .article-content h2 { font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-primary-dark); margin-bottom: 16px; padding-top: 16px; }
     .article-content h3 { font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-primary-dark); margin: 24px 0 10px; }
