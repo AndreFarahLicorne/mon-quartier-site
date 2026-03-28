@@ -1,0 +1,430 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const title = "Jeu de plateau personnalisé pour entreprise — Team building";
+const description = "Renforcez la cohésion d'équipe avec un jeu de société aux couleurs de votre entreprise. Idéal pour séminaires et team building.";
+---
+
+<Layout title={title} description={description}>
+    <Navbar />
+    <main>
+        <section class="landing-hero">
+            <div class="container">
+                <Breadcrumb items={[
+                    { label: "Accueil", href: "/" },
+                    { label: "Jeu personnalisé entreprise" }
+                ]} />
+                <h1>Un jeu de plateau aux couleurs de votre entreprise</h1>
+                <p class="landing-subtitle">Renforcez la cohésion d'équipe avec un jeu de société personnalisé. Les bureaux, salles de réunion et machines à café deviennent des propriétés sur le plateau !</p>
+                <a href="#devis" class="btn btn-primary btn-lg">Demander un devis gratuit</a>
+            </div>
+        </section>
+
+        <!-- Pourquoi un jeu d'entreprise -->
+        <section class="section section-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Pourquoi un jeu personnalisé pour votre entreprise ?</h2>
+                    <p>Un outil ludique et fédérateur pour toutes vos occasions professionnelles.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>Team building inoubliable</h3>
+                        <p>Rien de tel qu'un jeu de plateau aux couleurs de l'entreprise pour briser la glace. Les collaborateurs découvrent leur lieu de travail sous un angle ludique et partagent des fous rires.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Séminaire et événement</h3>
+                        <p>Marquez les esprits lors de votre séminaire annuel. Le jeu devient une animation unique qui renforce les liens entre les équipes et valorise la culture d'entreprise.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎁</div>
+                        <h3>Cadeau corporate original</h3>
+                        <p>Offrez un souvenir unique à vos collaborateurs, clients ou partenaires. Un cadeau d'entreprise qui ne finira pas au fond d'un tiroir mais sur la table du salon.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Les cases entreprise -->
+        <section class="section section-cream">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Vos locaux deviennent un terrain de jeu</h2>
+                    <p>Chaque bureau, chaque salle, chaque recoin a sa place sur le plateau.</p>
+                </div>
+                <div class="lieux-grid">
+                    <div class="lieu-card">
+                        <span class="lieu-icon">🏢</span>
+                        <h3>Le siège social</h3>
+                        <p>La case la plus prestigieuse du plateau, aux couleurs de votre marque.</p>
+                    </div>
+                    <div class="lieu-card">
+                        <span class="lieu-icon">☕</span>
+                        <h3>La machine à café</h3>
+                        <p>Le lieu stratégique de toutes les bonnes idées et des discussions informelles.</p>
+                    </div>
+                    <div class="lieu-card">
+                        <span class="lieu-icon">📊</span>
+                        <h3>La salle de réunion</h3>
+                        <p>Celle où les grandes décisions sont prises (et les budgets validés).</p>
+                    </div>
+                    <div class="lieu-card">
+                        <span class="lieu-icon">🍕</span>
+                        <h3>Le restaurant préféré</h3>
+                        <p>Le lieu des déjeuners d'équipe et des afterworks mémorables.</p>
+                    </div>
+                    <div class="lieu-card">
+                        <span class="lieu-icon">🅿️</span>
+                        <h3>Le parking</h3>
+                        <p>Avec la case "amende" pour ceux qui piquent la place du boss !</p>
+                    </div>
+                    <div class="lieu-card">
+                        <span class="lieu-icon">🏆</span>
+                        <h3>Le mur des succès</h3>
+                        <p>La case qui célèbre les réussites et les projets emblématiques.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exemple TechCorp -->
+        <section class="section section-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>L'exemple de TechCorp</h2>
+                    <p>Comment une startup de 80 personnes a transformé son séminaire.</p>
+                </div>
+                <div class="exemple-container">
+                    <div class="exemple-content">
+                        <p class="exemple-intro">TechCorp, une entreprise tech parisienne, cherchait une animation originale pour son séminaire annuel. Avec 80 collaborateurs répartis sur 3 sites, l'enjeu était de créer du lien entre les équipes.</p>
+                        <div class="exemple-details">
+                            <div class="exemple-item">
+                                <strong>Le défi :</strong>
+                                <span>Fédérer des équipes qui ne se connaissent pas toujours, autour d'un jeu qui représente l'univers de l'entreprise.</span>
+                            </div>
+                            <div class="exemple-item">
+                                <strong>Les cases :</strong>
+                                <span>Le bureau de la R&D (propriété premium), l'open space marketing (case à développer), la salle serveur (attention, case piège !), le rooftop (événement bonus), le bureau du CEO (passage obligé).</span>
+                            </div>
+                            <div class="exemple-item">
+                                <strong>Le résultat :</strong>
+                                <span>100 exemplaires commandés. Les équipes ont joué pendant tout le séminaire. Le jeu trône désormais dans chaque salle de pause. Les nouveaux arrivants découvrent l'entreprise en jouant !</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Témoignage -->
+        <section class="section section-dark">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Ce qu'en disent les entreprises</h2>
+                </div>
+                <div class="testimonial-highlight">
+                    <article class="testimonial-card testimonial-featured">
+                        <div class="testimonial-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+                        <p class="testimonial-text">"Le jeu a été un vrai succès lors de notre séminaire. Les équipes se sont retrouvées autour du plateau, les échanges étaient naturels et les rires permanents. Un investissement team building que je recommande."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">C</div>
+                            <div>
+                                <strong>Caroline R.</strong>
+                                <span>DRH — TechCorp</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comment ça marche -->
+        <section class="section section-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Comment créer le jeu de votre entreprise ?</h2>
+                    <p>Un processus simple en 3 étapes, compatible avec vos contraintes professionnelles.</p>
+                </div>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Briefez-nous sur votre entreprise</h3>
+                            <p>Partagez votre charte graphique, les lieux emblématiques de vos locaux, les anecdotes internes et la culture d'entreprise. Nous nous occupons du reste.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Validez la maquette</h3>
+                            <p>Nous créons un plateau aux couleurs de votre marque. Vous validez le design, les cases et les règles avant la production. Possibilité de personnaliser les cartes événements.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Recevez vos exemplaires</h3>
+                            <p>Livraison sous 3 à 4 semaines. Nous proposons des volumes adaptés aux entreprises, de 10 à 500 exemplaires. Facturation professionnelle disponible.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Maillage interne -->
+        <section class="section section-cream">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Découvrez nos autres créations</h2>
+                    <p>Un jeu personnalisé pour chaque occasion.</p>
+                </div>
+                <div class="links-grid">
+                    <a href="/jeu-de-quartier-personnalise/" class="link-card">
+                        <span class="link-icon">🏘️</span>
+                        <h3>Jeu de quartier</h3>
+                        <p>Votre quartier transformé en jeu pour associations et collectivités.</p>
+                    </a>
+                    <a href="/cadeau-personnalise-original/" class="link-card">
+                        <span class="link-icon">🎁</span>
+                        <h3>Cadeau personnalisé original</h3>
+                        <p>Le cadeau qui sort vraiment de l'ordinaire pour toutes les occasions.</p>
+                    </a>
+                    <a href="/" class="link-card">
+                        <span class="link-icon">🏠</span>
+                        <h3>Retour à l'accueil</h3>
+                        <p>Découvrez tout l'univers Mon Quartier et nos créations.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulaire de devis -->
+        <section class="section section-cream" id="devis">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Demandez votre devis gratuit</h2>
+                    <p>Décrivez-nous votre projet d'entreprise et recevez une proposition personnalisée sous 48h.</p>
+                </div>
+                <div class="form-container">
+                    <form id="devisForm" class="devis-form" aria-label="Formulaire de demande de devis" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="079156f8-d186-4ef3-99d5-28c6b1973be9">
+                        <input type="hidden" name="subject" value="Nouvelle demande de devis — Jeu d'entreprise">
+                        <input type="hidden" name="redirect" value="https://monquartier-jeu.fr/jeu-personnalise-entreprise/#devis">
+                        <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="nom">Nom complet *</label>
+                                <input type="text" id="nom" name="nom" required placeholder="Votre nom" autocomplete="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="votre@email.com" autocomplete="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="telephone">Téléphone</label>
+                                <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" autocomplete="tel">
+                            </div>
+                            <div class="form-group">
+                                <label for="occasion">Type de projet *</label>
+                                <select id="occasion" name="occasion" required>
+                                    <option value="" disabled>Choisissez une occasion</option>
+                                    <option value="quartier">Jeu de quartier / ville</option>
+                                    <option value="mariage">Mariage</option>
+                                    <option value="anniversaire">Anniversaire</option>
+                                    <option value="entreprise" selected>Entreprise / Team building</option>
+                                    <option value="association">Association / Comité</option>
+                                    <option value="cadeau">Cadeau personnalisé</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="quantite">Nombre d'exemplaires souhaités</label>
+                                <select id="quantite" name="quantite">
+                                    <option value="" disabled selected>Sélectionnez une quantité</option>
+                                    <option value="1">1 exemplaire</option>
+                                    <option value="2-5">2 à 5 exemplaires</option>
+                                    <option value="6-20">6 à 20 exemplaires</option>
+                                    <option value="21-50">21 à 50 exemplaires</option>
+                                    <option value="51-100">51 à 100 exemplaires</option>
+                                    <option value="100+">Plus de 100 exemplaires</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="message">Décrivez votre projet *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Parlez-nous de votre entreprise, du contexte (séminaire, team building, cadeau...), du nombre de collaborateurs..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-submit">Envoyer ma demande de devis</button>
+                        <p class="form-note">* Champs obligatoires — Réponse garantie sous 48h</p>
+                    </form>
+                    <div id="formSuccess" class="form-success" hidden>
+                        <div class="success-icon">✅</div>
+                        <h3>Demande envoyée !</h3>
+                        <p>Merci pour votre demande. Nous vous répondrons sous 48h avec une proposition personnalisée.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Jeu de plateau personnalisé entreprise",
+        "description": description,
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Mon Quartier",
+            "url": "https://monquartier-jeu.fr"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "France"
+        },
+        "serviceType": "Création de jeu de plateau personnalisé pour entreprise et team building"
+    })} />
+</Layout>
+
+<style>
+    .landing-hero {
+        padding: 140px 0 60px;
+        background: linear-gradient(135deg, #eef4ff 0%, #faf6f1 50%, #f0f7f0 100%);
+    }
+    .landing-hero h1 {
+        font-family: var(--font-heading);
+        font-size: 2.8rem;
+        color: var(--color-primary-dark);
+        max-width: 700px;
+        margin-bottom: 16px;
+    }
+    .landing-subtitle {
+        font-size: 1.2rem;
+        color: var(--color-text-light);
+        max-width: 600px;
+        line-height: 1.7;
+        margin-bottom: 32px;
+    }
+    .lieux-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+    .lieu-card {
+        background: var(--color-bg);
+        padding: 28px 24px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        text-align: center;
+        transition: all var(--transition);
+    }
+    .lieu-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+    }
+    .lieu-icon {
+        font-size: 2.2rem;
+        display: block;
+        margin-bottom: 12px;
+    }
+    .lieu-card h3 {
+        font-size: 1.1rem;
+        color: var(--color-primary-dark);
+        margin-bottom: 8px;
+    }
+    .lieu-card p {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+    .exemple-container {
+        max-width: 760px;
+        margin: 0 auto;
+    }
+    .exemple-content {
+        background: var(--color-bg);
+        padding: 40px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+    }
+    .exemple-intro {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--color-text);
+        margin-bottom: 24px;
+    }
+    .exemple-details {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .exemple-item {
+        padding: 16px;
+        background: var(--color-bg-light);
+        border-radius: var(--radius);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    .exemple-item strong {
+        color: var(--color-primary-dark);
+        display: block;
+        margin-bottom: 4px;
+    }
+    .exemple-item span {
+        color: var(--color-text-light);
+    }
+    .testimonial-highlight {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .testimonial-featured {
+        text-align: center;
+        padding: 40px;
+    }
+    .testimonial-featured .testimonial-author {
+        justify-content: center;
+    }
+    .links-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+    .link-card {
+        background: var(--color-bg);
+        padding: 32px 24px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        text-align: center;
+        transition: all var(--transition);
+        display: block;
+    }
+    .link-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+    }
+    .link-icon {
+        font-size: 2rem;
+        display: block;
+        margin-bottom: 12px;
+    }
+    .link-card h3 {
+        font-size: 1.1rem;
+        color: var(--color-primary-dark);
+        margin-bottom: 8px;
+    }
+    .link-card p {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+    @media (max-width: 768px) {
+        .landing-hero { padding: 110px 0 40px; }
+        .landing-hero h1 { font-size: 2rem; }
+        .lieux-grid { grid-template-columns: 1fr; }
+        .links-grid { grid-template-columns: 1fr; }
+        .exemple-content { padding: 24px; }
+    }
+</style>

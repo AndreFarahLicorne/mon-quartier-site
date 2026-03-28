@@ -1,0 +1,430 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const title = "Jeu de plateau de votre quartier — Associations et collectivités";
+const description = "Transformez votre quartier en jeu de société. Idéal pour associations de commerçants, mairies et fêtes de quartier.";
+---
+
+<Layout title={title} description={description}>
+    <Navbar />
+    <main>
+        <section class="landing-hero">
+            <div class="container">
+                <Breadcrumb items={[
+                    { label: "Accueil", href: "/" },
+                    { label: "Jeu de quartier personnalisé" }
+                ]} />
+                <h1>Transformez votre quartier en jeu de société</h1>
+                <p class="landing-subtitle">Vos rues, vos commerces, vos monuments sur un plateau de jeu. Idéal pour les fêtes de quartier, les associations de commerçants et les collectivités.</p>
+                <a href="#devis" class="btn btn-primary btn-lg">Demander un devis gratuit</a>
+            </div>
+        </section>
+
+        <!-- Pourquoi un jeu de quartier -->
+        <section class="section section-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Pourquoi créer le jeu de votre quartier ?</h2>
+                    <p>Un outil ludique pour rassembler les habitants et valoriser le territoire.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎪</div>
+                        <h3>Animation de fête de quartier</h3>
+                        <p>Le jeu devient l'attraction phare de votre événement. Petits et grands découvrent ou redécouvrent leur quartier en jouant. Un moment de convivialité unique.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏪</div>
+                        <h3>Valoriser les commerçants</h3>
+                        <p>Chaque commerce du quartier a sa case sur le plateau. La boulangerie, le fleuriste, le café du coin... Un formidable outil de promotion locale et de lien social.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏛️</div>
+                        <h3>Projet de collectivité</h3>
+                        <p>Les mairies et communautés de communes utilisent le jeu pour renforcer l'identité locale, animer les centres sociaux et créer du lien entre les générations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Les éléments du quartier -->
+        <section class="section section-cream">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Votre quartier, case par case</h2>
+                    <p>Chaque rue, chaque commerce, chaque lieu emblématique trouve sa place sur le plateau.</p>
+                </div>
+                <div class="lieux-grid">
+                    <div class="lieu-card">
+                        <span class="lieu-icon">🥖</span>
+                        <h3>La boulangerie</h3>
+                        <p>Celle où tout le monde fait la queue le dimanche matin.</p>
+                    </div>
+                    <div class="lieu-card">
+                        <span class="lieu-icon">⛪</span>
+                        <h3>L'église / la mairie</h3>
+                        <p>Le coeur historique du quartier, point de repère pour tous.</p>
+                    </div>
+                    <div class="lieu-card">
+                        <span class="lieu-icon">🌳</span>
+                        <h3>Le parc / la place</h3>
+                        <p>Le lieu de rendez-vous des familles et des amis.</p>
+                    </div>
+                    <div class="lieu-card">
+                        <span class="lieu-icon">🏫</span>
+                        <h3>L'école</h3>
+                        <p>Là où les enfants du quartier grandissent ensemble.</p>
+                    </div>
+                    <div class="lieu-card">
+                        <span class="lieu-icon">☕</span>
+                        <h3>Le café du coin</h3>
+                        <p>Le QG des habitants, pour un expresso ou un apéro.</p>
+                    </div>
+                    <div class="lieu-card">
+                        <span class="lieu-icon">🏥</span>
+                        <h3>La pharmacie</h3>
+                        <p>Un incontournable de la vie de quartier.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exemple Montmartre -->
+        <section class="section section-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>L'exemple de Montmartre</h2>
+                    <p>Comment une association de commerçants a mis son quartier en jeu.</p>
+                </div>
+                <div class="exemple-container">
+                    <div class="exemple-content">
+                        <p class="exemple-intro">L'association des commerçants de Montmartre cherchait un projet fédérateur pour la fête du quartier 2024. L'idée d'un jeu de plateau représentant les rues et commerces du quartier s'est imposée.</p>
+                        <div class="exemple-details">
+                            <div class="exemple-item">
+                                <strong>Le défi :</strong>
+                                <span>Représenter la diversité d'un quartier mythique avec ses 120 commerces, ses artistes, ses touristes et ses habitants de longue date.</span>
+                            </div>
+                            <div class="exemple-item">
+                                <strong>Les cases :</strong>
+                                <span>La Place du Tertre (propriété premium), le Sacré-Coeur (case bonus), le Moulin Rouge (événement spécial), la rue Lepic (commerces de bouche), le Lapin Agile (carte chance), les vignes de Montmartre (propriété rare).</span>
+                            </div>
+                            <div class="exemple-item">
+                                <strong>Le résultat :</strong>
+                                <span>500 exemplaires vendus en deux semaines. Le jeu est devenu le souvenir officiel du quartier. Les commerçants ont vu leur fréquentation augmenter grâce à la visibilité sur le plateau.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Témoignage Pierre D. -->
+        <section class="section section-dark">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Ce qu'en disent les collectivités</h2>
+                </div>
+                <div class="testimonial-highlight">
+                    <article class="testimonial-card testimonial-featured">
+                        <div class="testimonial-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+                        <p class="testimonial-text">"En tant que maire, j'ai commandé 200 exemplaires pour notre fête de village. Les habitants étaient ravis de retrouver leurs rues et leurs commerces préférés."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">P</div>
+                            <div>
+                                <strong>Pierre D.</strong>
+                                <span>Mairie — Fête de village</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comment ça marche -->
+        <section class="section section-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Comment créer le jeu de votre quartier ?</h2>
+                    <p>Un processus simple en 3 étapes, adapté aux collectivités et associations.</p>
+                </div>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Décrivez votre quartier</h3>
+                            <p>Envoyez-nous la liste des rues, commerces et lieux emblématiques à faire figurer sur le plateau. Impliquez les habitants et les commerçants dans le choix des cases !</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Validez la maquette</h3>
+                            <p>Notre équipe crée un plateau fidèle à votre quartier. Vous validez chaque case, chaque rue, chaque détail. Les commerçants peuvent sponsoriser leur case.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Distribuez ou vendez le jeu</h3>
+                            <p>Recevez vos exemplaires sous 3 à 4 semaines. Vendez-les lors de vos événements ou offrez-les aux habitants. Un souvenir que chaque foyer gardera précieusement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Maillage interne -->
+        <section class="section section-cream">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Découvrez nos autres créations</h2>
+                    <p>Un jeu personnalisé pour chaque occasion.</p>
+                </div>
+                <div class="links-grid">
+                    <a href="/jeu-personnalise-entreprise/" class="link-card">
+                        <span class="link-icon">🏢</span>
+                        <h3>Jeu pour entreprise</h3>
+                        <p>Renforcez la cohésion d'équipe avec un jeu aux couleurs de votre entreprise.</p>
+                    </a>
+                    <a href="/cadeau-personnalise-original/" class="link-card">
+                        <span class="link-icon">🎁</span>
+                        <h3>Cadeau personnalisé original</h3>
+                        <p>Le cadeau qui sort vraiment de l'ordinaire pour toutes les occasions.</p>
+                    </a>
+                    <a href="/" class="link-card">
+                        <span class="link-icon">🏘️</span>
+                        <h3>Retour à l'accueil</h3>
+                        <p>Découvrez tout l'univers Mon Quartier et nos créations.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulaire de devis -->
+        <section class="section section-cream" id="devis">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Demandez votre devis gratuit</h2>
+                    <p>Décrivez-nous votre projet de jeu de quartier et recevez une proposition personnalisée sous 48h.</p>
+                </div>
+                <div class="form-container">
+                    <form id="devisForm" class="devis-form" aria-label="Formulaire de demande de devis" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="079156f8-d186-4ef3-99d5-28c6b1973be9">
+                        <input type="hidden" name="subject" value="Nouvelle demande de devis — Jeu de quartier">
+                        <input type="hidden" name="redirect" value="https://monquartier-jeu.fr/jeu-de-quartier-personnalise/#devis">
+                        <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="nom">Nom complet *</label>
+                                <input type="text" id="nom" name="nom" required placeholder="Votre nom" autocomplete="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="votre@email.com" autocomplete="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="telephone">Téléphone</label>
+                                <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" autocomplete="tel">
+                            </div>
+                            <div class="form-group">
+                                <label for="occasion">Type de projet *</label>
+                                <select id="occasion" name="occasion" required>
+                                    <option value="" disabled>Choisissez une occasion</option>
+                                    <option value="quartier" selected>Jeu de quartier / ville</option>
+                                    <option value="mariage">Mariage</option>
+                                    <option value="anniversaire">Anniversaire</option>
+                                    <option value="entreprise">Entreprise / Team building</option>
+                                    <option value="association">Association / Comité</option>
+                                    <option value="cadeau">Cadeau personnalisé</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="quantite">Nombre d'exemplaires souhaités</label>
+                                <select id="quantite" name="quantite">
+                                    <option value="" disabled selected>Sélectionnez une quantité</option>
+                                    <option value="1">1 exemplaire</option>
+                                    <option value="2-5">2 à 5 exemplaires</option>
+                                    <option value="6-20">6 à 20 exemplaires</option>
+                                    <option value="21-50">21 à 50 exemplaires</option>
+                                    <option value="51-100">51 à 100 exemplaires</option>
+                                    <option value="100+">Plus de 100 exemplaires</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="message">Décrivez votre projet *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Parlez-nous de votre quartier, des rues et commerces à inclure, du contexte (fête de quartier, association, mairie)..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-submit">Envoyer ma demande de devis</button>
+                        <p class="form-note">* Champs obligatoires — Réponse garantie sous 48h</p>
+                    </form>
+                    <div id="formSuccess" class="form-success" hidden>
+                        <div class="success-icon">✅</div>
+                        <h3>Demande envoyée !</h3>
+                        <p>Merci pour votre demande. Nous vous répondrons sous 48h avec une proposition personnalisée.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Jeu de plateau de quartier personnalisé",
+        "description": description,
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Mon Quartier",
+            "url": "https://monquartier-jeu.fr"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "France"
+        },
+        "serviceType": "Création de jeu de plateau personnalisé pour quartier et collectivités"
+    })} />
+</Layout>
+
+<style>
+    .landing-hero {
+        padding: 140px 0 60px;
+        background: linear-gradient(135deg, #f0f7f0 0%, #faf6f1 50%, #eef4ff 100%);
+    }
+    .landing-hero h1 {
+        font-family: var(--font-heading);
+        font-size: 2.8rem;
+        color: var(--color-primary-dark);
+        max-width: 700px;
+        margin-bottom: 16px;
+    }
+    .landing-subtitle {
+        font-size: 1.2rem;
+        color: var(--color-text-light);
+        max-width: 600px;
+        line-height: 1.7;
+        margin-bottom: 32px;
+    }
+    .lieux-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+    .lieu-card {
+        background: var(--color-bg);
+        padding: 28px 24px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        text-align: center;
+        transition: all var(--transition);
+    }
+    .lieu-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+    }
+    .lieu-icon {
+        font-size: 2.2rem;
+        display: block;
+        margin-bottom: 12px;
+    }
+    .lieu-card h3 {
+        font-size: 1.1rem;
+        color: var(--color-primary-dark);
+        margin-bottom: 8px;
+    }
+    .lieu-card p {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+    .exemple-container {
+        max-width: 760px;
+        margin: 0 auto;
+    }
+    .exemple-content {
+        background: var(--color-bg);
+        padding: 40px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+    }
+    .exemple-intro {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--color-text);
+        margin-bottom: 24px;
+    }
+    .exemple-details {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .exemple-item {
+        padding: 16px;
+        background: var(--color-bg-light);
+        border-radius: var(--radius);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    .exemple-item strong {
+        color: var(--color-primary-dark);
+        display: block;
+        margin-bottom: 4px;
+    }
+    .exemple-item span {
+        color: var(--color-text-light);
+    }
+    .testimonial-highlight {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .testimonial-featured {
+        text-align: center;
+        padding: 40px;
+    }
+    .testimonial-featured .testimonial-author {
+        justify-content: center;
+    }
+    .links-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+    .link-card {
+        background: var(--color-bg);
+        padding: 32px 24px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        text-align: center;
+        transition: all var(--transition);
+        display: block;
+    }
+    .link-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+    }
+    .link-icon {
+        font-size: 2rem;
+        display: block;
+        margin-bottom: 12px;
+    }
+    .link-card h3 {
+        font-size: 1.1rem;
+        color: var(--color-primary-dark);
+        margin-bottom: 8px;
+    }
+    .link-card p {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+    @media (max-width: 768px) {
+        .landing-hero { padding: 110px 0 40px; }
+        .landing-hero h1 { font-size: 2rem; }
+        .lieux-grid { grid-template-columns: 1fr; }
+        .links-grid { grid-template-columns: 1fr; }
+        .exemple-content { padding: 24px; }
+    }
+</style>

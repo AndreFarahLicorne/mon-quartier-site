@@ -1,0 +1,431 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const title = "Jeu de plateau personnalisé pour mariage — Cadeau original";
+const description = "Offrez un jeu de société unique pour votre mariage. Plateau personnalisé avec les lieux de votre histoire d'amour.";
+---
+
+<Layout title={title} description={description}>
+    <Navbar />
+    <main>
+        <section class="landing-hero">
+            <div class="container">
+                <Breadcrumb items={[
+                    { label: "Accueil", href: "/" },
+                    { label: "Jeu personnalisé mariage" }
+                ]} />
+                <h1>Un jeu de plateau personnalisé pour votre mariage</h1>
+                <p class="landing-subtitle">Transformez votre histoire d'amour en jeu de société. Chaque case raconte un chapitre de votre vie à deux : première rencontre, premier rendez-vous, demande en mariage, salle de réception...</p>
+                <a href="#devis" class="btn btn-primary btn-lg">Demander un devis gratuit</a>
+            </div>
+        </section>
+
+        <!-- Pourquoi offrir un jeu pour un mariage -->
+        <section class="section section-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Pourquoi offrir un jeu de plateau pour un mariage ?</h2>
+                    <p>Bien plus qu'un cadeau, un souvenir qui rassemble famille et amis autour de votre histoire.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">💍</div>
+                        <h3>Un cadeau unique et personnel</h3>
+                        <p>Fini les listes de mariage classiques. Offrez un jeu qui retrace votre parcours amoureux, du premier regard à la cérémonie. Un objet que vous garderez toute votre vie.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎉</div>
+                        <h3>L'animation parfaite pour la soirée</h3>
+                        <p>Imaginez vos invités découvrir les lieux qui ont marqué votre couple. Fous rires garantis quand ils tomberont sur la case "premier rendez-vous catastrophe" !</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏡</div>
+                        <h3>Un objet déco chargé de souvenirs</h3>
+                        <p>Après la fête, le plateau trouve sa place dans votre salon. Chaque partie vous replonge dans vos plus beaux souvenirs. Un héritage à transmettre.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Les lieux qui comptent -->
+        <section class="section section-cream">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Les lieux de votre histoire sur un plateau</h2>
+                    <p>Chaque case représente un moment clé de votre couple.</p>
+                </div>
+                <div class="lieux-grid">
+                    <div class="lieu-card">
+                        <span class="lieu-icon">☕</span>
+                        <h3>Première rencontre</h3>
+                        <p>Le café, la soirée, la fac... là où tout a commencé.</p>
+                    </div>
+                    <div class="lieu-card">
+                        <span class="lieu-icon">🌹</span>
+                        <h3>Premier rendez-vous</h3>
+                        <p>Le restaurant, le parc, le cinéma de votre premier tête-à-tête.</p>
+                    </div>
+                    <div class="lieu-card">
+                        <span class="lieu-icon">💎</span>
+                        <h3>Demande en mariage</h3>
+                        <p>Le lieu magique où la question a été posée (et la réponse donnée !).</p>
+                    </div>
+                    <div class="lieu-card">
+                        <span class="lieu-icon">🏰</span>
+                        <h3>Salle de réception</h3>
+                        <p>Le château, le domaine, la salle des fêtes de votre grand jour.</p>
+                    </div>
+                    <div class="lieu-card">
+                        <span class="lieu-icon">✈️</span>
+                        <h3>Voyage de noces</h3>
+                        <p>La destination rêvée de votre lune de miel.</p>
+                    </div>
+                    <div class="lieu-card">
+                        <span class="lieu-icon">🏠</span>
+                        <h3>Votre chez-vous</h3>
+                        <p>Le premier appartement, la maison où vous construisez votre avenir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exemple concret Julie & Thomas -->
+        <section class="section section-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>L'histoire de Julie & Thomas</h2>
+                    <p>Découvrez comment ce couple a transformé son histoire en jeu.</p>
+                </div>
+                <div class="exemple-container">
+                    <div class="exemple-content">
+                        <p class="exemple-intro">Julie et Thomas se sont rencontrés à Lyon en 2018. Pour leur mariage en 2023, ils voulaient un cadeau qui raconte leur histoire à leurs 120 invités.</p>
+                        <div class="exemple-details">
+                            <div class="exemple-item">
+                                <strong>Le défi :</strong>
+                                <span>Créer un jeu qui retrace 5 ans d'amour, de Lyon à Paris, en passant par Barcelone.</span>
+                            </div>
+                            <div class="exemple-item">
+                                <strong>Les cases :</strong>
+                                <span>Le bar des Terreaux (première rencontre), le Parc de la Tête d'Or (premier baiser), l'aéroport de Barcelone (vacances mémorables), la Tour Eiffel (demande en mariage), le Château de Bagnols (réception).</span>
+                            </div>
+                            <div class="exemple-item">
+                                <strong>Le résultat :</strong>
+                                <span>50 exemplaires offerts aux invités. Le jeu est devenu l'animation phare de la soirée, avec des parties endiablées jusqu'à 3h du matin !</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Témoignage Julie & Thomas -->
+        <section class="section section-dark">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Ce qu'en disent nos mariés</h2>
+                </div>
+                <div class="testimonial-highlight">
+                    <article class="testimonial-card testimonial-featured">
+                        <div class="testimonial-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+                        <p class="testimonial-text">"Nos invités de mariage ont adoré ! C'était l'animation phare de la soirée. Le plateau retrace notre histoire et c'est devenu un objet déco dans notre salon."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">J</div>
+                            <div>
+                                <strong>Julie & Thomas M.</strong>
+                                <span>Cadeau de mariage</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comment ça marche -->
+        <section class="section section-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Comment créer votre jeu de mariage ?</h2>
+                    <p>Un processus simple en 3 étapes pour un résultat sur mesure.</p>
+                </div>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Racontez-nous votre histoire</h3>
+                            <p>Remplissez le formulaire ci-dessous avec les lieux, dates et anecdotes de votre couple. Plus vous nous en dites, plus le jeu sera personnel et touchant.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Validez la maquette</h3>
+                            <p>Notre équipe crée une maquette personnalisée de votre plateau. Vous validez chaque case, chaque couleur, chaque détail avant la fabrication.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Recevez votre jeu</h3>
+                            <p>Votre jeu est fabriqué avec soin et livré chez vous sous 3 à 4 semaines. Prêt à faire sensation le jour J !</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Maillage interne -->
+        <section class="section section-cream">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Découvrez nos autres créations</h2>
+                    <p>Un jeu personnalisé pour chaque occasion.</p>
+                </div>
+                <div class="links-grid">
+                    <a href="/jeu-personnalise-anniversaire/" class="link-card">
+                        <span class="link-icon">🎂</span>
+                        <h3>Jeu pour anniversaire</h3>
+                        <p>Les lieux marquants d'une vie sur un plateau de jeu unique.</p>
+                    </a>
+                    <a href="/cadeau-personnalise-original/" class="link-card">
+                        <span class="link-icon">🎁</span>
+                        <h3>Cadeau personnalisé original</h3>
+                        <p>Le cadeau qui sort vraiment de l'ordinaire pour toutes les occasions.</p>
+                    </a>
+                    <a href="/" class="link-card">
+                        <span class="link-icon">🏘️</span>
+                        <h3>Retour à l'accueil</h3>
+                        <p>Découvrez tout l'univers Mon Quartier et nos créations.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulaire de devis -->
+        <section class="section section-cream" id="devis">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Demandez votre devis gratuit</h2>
+                    <p>Décrivez-nous votre projet de jeu de mariage et recevez une proposition personnalisée sous 48h.</p>
+                </div>
+                <div class="form-container">
+                    <form id="devisForm" class="devis-form" aria-label="Formulaire de demande de devis" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="079156f8-d186-4ef3-99d5-28c6b1973be9">
+                        <input type="hidden" name="subject" value="Nouvelle demande de devis — Jeu de mariage">
+                        <input type="hidden" name="redirect" value="https://monquartier-jeu.fr/jeu-personnalise-mariage/#devis">
+                        <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="nom">Nom complet *</label>
+                                <input type="text" id="nom" name="nom" required placeholder="Votre nom" autocomplete="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="votre@email.com" autocomplete="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="telephone">Téléphone</label>
+                                <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" autocomplete="tel">
+                            </div>
+                            <div class="form-group">
+                                <label for="occasion">Type de projet *</label>
+                                <select id="occasion" name="occasion" required>
+                                    <option value="" disabled>Choisissez une occasion</option>
+                                    <option value="quartier">Jeu de quartier / ville</option>
+                                    <option value="mariage" selected>Mariage</option>
+                                    <option value="anniversaire">Anniversaire</option>
+                                    <option value="entreprise">Entreprise / Team building</option>
+                                    <option value="association">Association / Comité</option>
+                                    <option value="cadeau">Cadeau personnalisé</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="quantite">Nombre d'exemplaires souhaités</label>
+                                <select id="quantite" name="quantite">
+                                    <option value="" disabled selected>Sélectionnez une quantité</option>
+                                    <option value="1">1 exemplaire</option>
+                                    <option value="2-5">2 à 5 exemplaires</option>
+                                    <option value="6-20">6 à 20 exemplaires</option>
+                                    <option value="21-50">21 à 50 exemplaires</option>
+                                    <option value="51-100">51 à 100 exemplaires</option>
+                                    <option value="100+">Plus de 100 exemplaires</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="message">Décrivez votre projet *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Parlez-nous de votre mariage, des lieux importants de votre histoire, de vos idées de personnalisation..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-submit">Envoyer ma demande de devis</button>
+                        <p class="form-note">* Champs obligatoires — Réponse garantie sous 48h</p>
+                    </form>
+                    <div id="formSuccess" class="form-success" hidden>
+                        <div class="success-icon">✅</div>
+                        <h3>Demande envoyée !</h3>
+                        <p>Merci pour votre demande. Nous vous répondrons sous 48h avec une proposition personnalisée.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Jeu de plateau personnalisé mariage",
+        "description": description,
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Mon Quartier",
+            "url": "https://monquartier-jeu.fr"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "France"
+        },
+        "serviceType": "Création de jeu de plateau personnalisé pour mariage"
+    })} />
+</Layout>
+
+<style>
+    .landing-hero {
+        padding: 140px 0 60px;
+        background: linear-gradient(135deg, #fff5f5 0%, #faf6f1 50%, #f0f7f0 100%);
+    }
+    .landing-hero h1 {
+        font-family: var(--font-heading);
+        font-size: 2.8rem;
+        color: var(--color-primary-dark);
+        max-width: 700px;
+        margin-bottom: 16px;
+    }
+    .landing-subtitle {
+        font-size: 1.2rem;
+        color: var(--color-text-light);
+        max-width: 600px;
+        line-height: 1.7;
+        margin-bottom: 32px;
+    }
+    .lieux-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+    .lieu-card {
+        background: var(--color-bg);
+        padding: 28px 24px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        text-align: center;
+        transition: all var(--transition);
+    }
+    .lieu-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+    }
+    .lieu-icon {
+        font-size: 2.2rem;
+        display: block;
+        margin-bottom: 12px;
+    }
+    .lieu-card h3 {
+        font-size: 1.1rem;
+        color: var(--color-primary-dark);
+        margin-bottom: 8px;
+    }
+    .lieu-card p {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+    .exemple-container {
+        max-width: 760px;
+        margin: 0 auto;
+    }
+    .exemple-content {
+        background: var(--color-bg);
+        padding: 40px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+    }
+    .exemple-intro {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--color-text);
+        margin-bottom: 24px;
+    }
+    .exemple-details {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .exemple-item {
+        padding: 16px;
+        background: var(--color-bg-light);
+        border-radius: var(--radius);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    .exemple-item strong {
+        color: var(--color-primary-dark);
+        display: block;
+        margin-bottom: 4px;
+    }
+    .exemple-item span {
+        color: var(--color-text-light);
+    }
+    .testimonial-highlight {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .testimonial-featured {
+        text-align: center;
+        padding: 40px;
+    }
+    .testimonial-featured .testimonial-author {
+        justify-content: center;
+    }
+    .links-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+    .link-card {
+        background: var(--color-bg);
+        padding: 32px 24px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        text-align: center;
+        transition: all var(--transition);
+        display: block;
+    }
+    .link-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--color-primary-light);
+    }
+    .link-icon {
+        font-size: 2rem;
+        display: block;
+        margin-bottom: 12px;
+    }
+    .link-card h3 {
+        font-size: 1.1rem;
+        color: var(--color-primary-dark);
+        margin-bottom: 8px;
+    }
+    .link-card p {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+    @media (max-width: 768px) {
+        .landing-hero { padding: 110px 0 40px; }
+        .landing-hero h1 { font-size: 2rem; }
+        .lieux-grid { grid-template-columns: 1fr; }
+        .links-grid { grid-template-columns: 1fr; }
+        .exemple-content { padding: 24px; }
+    }
+</style>
