@@ -13,7 +13,7 @@ import Footer from '../components/Footer.astro';
 
 <Layout
     title="Le jeu inspiré du Monopoly a personnaliser"
-    description="Créez votre propre jeu de plateau personnalisé inspiré du Monopoly. Idéal pour offrir, célébrer votre quartier où marquer un événement unique. À partir de 59 euros."
+    description="Créez votre propre jeu de plateau personnalisé inspiré du Monopoly. Idéal pour offrir, célébrer votre quartier où marquer un événement unique."
 >
     <Navbar />
     <main>
@@ -29,14 +29,14 @@ import Footer from '../components/Footer.astro';
 
     <script>
         // Navbar scroll
-        const navbar = document.getÉlémentById('navbar');
+        const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             navbar?.classList.toggle('scrolled', window.scrollY > 50);
         });
 
         // Mobile menu
-        const navToggle = document.getÉlémentById('navToggle');
-        const navLinks = document.getÉlémentById('navLinks');
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
         navToggle?.addEventListener('click', () => {
             navToggle.classList.toggle('active');
             navLinks?.classList.toggle('active');
@@ -48,16 +48,33 @@ import Footer from '../components/Footer.astro';
             });
         });
 
-        // Form handling
-        const devisForm = document.getÉlémentById('devisForm') as HTMLFormÉlément | null;
-        const formSuccess = document.getÉlémentById('formSuccess');
-        devisForm?.addEventListener('submit', (e) => {
+        // Form handling via Web3Forms
+        const devisForm = document.getElementById('devisForm') as HTMLFormElement | null;
+        const formSuccess = document.getElementById('formSuccess');
+        devisForm?.addEventListener('submit', async (e) => {
             e.preventDefault();
+            const submitBtn = devisForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+            submitBtn.textContent = 'Envoi en cours...';
+            submitBtn.disabled = true;
+
             const formData = new FormData(devisForm);
-            console.log('Demande de devis:', Object.fromEntries(formData.entries()));
-            devisForm.hidden = true;
-            if (formSuccess) formSuccess.hidden = false;
-            formSuccess?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            try {
+                const res = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData,
+                });
+                if (res.ok) {
+                    devisForm.hidden = true;
+                    if (formSuccess) formSuccess.hidden = false;
+                    formSuccess?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    submitBtn.textContent = 'Erreur, veuillez réessayer';
+                    submitBtn.disabled = false;
+                }
+            } catch {
+                submitBtn.textContent = 'Erreur, veuillez réessayer';
+                submitBtn.disabled = false;
+            }
         });
 
         // Scroll animations

@@ -5,7 +5,11 @@
             <p>Décrivez-nous votre projet et recevez une proposition personnalisée sous 48h.</p>
         </div>
         <div class="form-container">
-            <form id="devisForm" class="devis-form" aria-label="Formulaire de demande de devis">
+            <form id="devisForm" class="devis-form" aria-label="Formulaire de demande de devis" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="079156f8-d186-4ef3-99d5-28c6b1973be9">
+                <input type="hidden" name="subject" value="Nouvelle demande de devis — Mon Quartier">
+                <input type="hidden" name="redirect" value="https://monquartier-jeu.fr/#devis">
+                <input type="checkbox" name="botcheck" class="hidden" style="display:none">
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="nom">Nom complet *</label>
@@ -33,8 +37,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="quantité">Nombre d'exemplaires souhaités</label>
-                        <select id="quantité" name="quantité">
+                        <label for="quantite">Nombre d'exemplaires souhaités</label>
+                        <select id="quantite" name="quantite">
                             <option value="" disabled selected>Sélectionnez une quantité</option>
                             <option value="1">1 exemplaire</option>
                             <option value="2-5">2 à 5 exemplaires</option>
@@ -42,17 +46,6 @@
                             <option value="21-50">21 à 50 exemplaires</option>
                             <option value="51-100">51 à 100 exemplaires</option>
                             <option value="100+">Plus de 100 exemplaires</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="budget">Budget estimé</label>
-                        <select id="budget" name="budget">
-                            <option value="" disabled selected>Sélectionnez un budget</option>
-                            <option value="< 100€">Moins de 100 €</option>
-                            <option value="100-300€">100 — 300 €</option>
-                            <option value="300-500€">300 — 500 €</option>
-                            <option value="500-1000€">500 — 1 000 €</option>
-                            <option value="> 1000€">Plus de 1 000 €</option>
                         </select>
                     </div>
                 </div>
