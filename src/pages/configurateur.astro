@@ -160,9 +160,198 @@ const cornerCases = cases.filter(c => c.type === "corner");
                     </div>
                 </div>
 
-                <!-- Actions -->
+            </div>
+        </section>
+
+        <!-- Cartes Chance -->
+        <section class="section section-light" id="cartes-chance">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Cartes Chance</h2>
+                    <p>Personnalisez les 16 cartes Chance. Glissez-y des anecdotes, des défis ou des private jokes.</p>
+                </div>
+                <div class="cards-grid">
+                    <div class="card-edit chance-card">
+                        <span class="card-number">1</span>
+                        <input type="text" class="card-input" value="Avancez jusqu'à la case Départ" maxlength="80">
+                        <span class="card-type">Déplacement</span>
+                    </div>
+                    <div class="card-edit chance-card">
+                        <span class="card-number">2</span>
+                        <input type="text" class="card-input" value="Avancez jusqu'aux Champs-Élysées" maxlength="80">
+                        <span class="card-type">Déplacement</span>
+                    </div>
+                    <div class="card-edit chance-card">
+                        <span class="card-number">3</span>
+                        <input type="text" class="card-input" value="Avancez jusqu'à la Rue de la Paix" maxlength="80">
+                        <span class="card-type">Déplacement</span>
+                    </div>
+                    <div class="card-edit chance-card">
+                        <span class="card-number">4</span>
+                        <input type="text" class="card-input" value="Avancez jusqu'à la gare la plus proche" maxlength="80">
+                        <span class="card-type">Déplacement</span>
+                    </div>
+                    <div class="card-edit chance-card">
+                        <span class="card-number">5</span>
+                        <input type="text" class="card-input" value="Avancez jusqu'à la gare la plus proche" maxlength="80">
+                        <span class="card-type">Déplacement</span>
+                    </div>
+                    <div class="card-edit chance-card">
+                        <span class="card-number">6</span>
+                        <input type="text" class="card-input" value="Avancez au Boulevard de la Villette" maxlength="80">
+                        <span class="card-type">Déplacement</span>
+                    </div>
+                    <div class="card-edit chance-card">
+                        <span class="card-number">7</span>
+                        <input type="text" class="card-input" value="Reculez de 3 cases" maxlength="80">
+                        <span class="card-type">Déplacement</span>
+                    </div>
+                    <div class="card-edit chance-card">
+                        <span class="card-number">8</span>
+                        <input type="text" class="card-input" value="Allez en prison" maxlength="80">
+                        <span class="card-type">Déplacement</span>
+                    </div>
+                    <div class="card-edit chance-card">
+                        <span class="card-number">9</span>
+                        <input type="text" class="card-input" value="La banque vous verse 50 €" maxlength="80">
+                        <span class="card-type">Gain</span>
+                    </div>
+                    <div class="card-edit chance-card">
+                        <span class="card-number">10</span>
+                        <input type="text" class="card-input" value="La banque vous verse 150 €" maxlength="80">
+                        <span class="card-type">Gain</span>
+                    </div>
+                    <div class="card-edit chance-card">
+                        <span class="card-number">11</span>
+                        <input type="text" class="card-input" value="Vous êtes imposé : payez 15 €" maxlength="80">
+                        <span class="card-type">Paiement</span>
+                    </div>
+                    <div class="card-edit chance-card">
+                        <span class="card-number">12</span>
+                        <input type="text" class="card-input" value="Amende pour excès de vitesse : 15 €" maxlength="80">
+                        <span class="card-type">Paiement</span>
+                    </div>
+                    <div class="card-edit chance-card">
+                        <span class="card-number">13</span>
+                        <input type="text" class="card-input" value="Payez pour frais de scolarité : 150 €" maxlength="80">
+                        <span class="card-type">Paiement</span>
+                    </div>
+                    <div class="card-edit chance-card">
+                        <span class="card-number">14</span>
+                        <input type="text" class="card-input" value="Réparations : 25 € par maison, 100 € par hôtel" maxlength="80">
+                        <span class="card-type">Paiement</span>
+                    </div>
+                    <div class="card-edit chance-card">
+                        <span class="card-number">15</span>
+                        <input type="text" class="card-input" value="Réparations : 40 € par maison, 115 € par hôtel" maxlength="80">
+                        <span class="card-type">Paiement</span>
+                    </div>
+                    <div class="card-edit chance-card">
+                        <span class="card-number">16</span>
+                        <input type="text" class="card-input" value="Vous êtes libéré de prison (à conserver)" maxlength="80">
+                        <span class="card-type">Spéciale</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cartes Caisse de communauté -->
+        <section class="section section-cream" id="cartes-communaute">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Cartes Caisse de communauté</h2>
+                    <p>Personnalisez les 16 cartes Communauté. Ajoutez des situations du quotidien de votre quartier.</p>
+                </div>
+                <div class="cards-grid">
+                    <div class="card-edit community-card">
+                        <span class="card-number">1</span>
+                        <input type="text" class="card-input" value="Avancez jusqu'à la case Départ" maxlength="80">
+                        <span class="card-type">Déplacement</span>
+                    </div>
+                    <div class="card-edit community-card">
+                        <span class="card-number">2</span>
+                        <input type="text" class="card-input" value="Allez en prison" maxlength="80">
+                        <span class="card-type">Déplacement</span>
+                    </div>
+                    <div class="card-edit community-card">
+                        <span class="card-number">3</span>
+                        <input type="text" class="card-input" value="Erreur de la banque en votre faveur : 200 €" maxlength="80">
+                        <span class="card-type">Gain</span>
+                    </div>
+                    <div class="card-edit community-card">
+                        <span class="card-number">4</span>
+                        <input type="text" class="card-input" value="La vente de votre stock vous rapporte 50 €" maxlength="80">
+                        <span class="card-type">Gain</span>
+                    </div>
+                    <div class="card-edit community-card">
+                        <span class="card-number">5</span>
+                        <input type="text" class="card-input" value="Vous avez gagné le 2e prix de beauté : 10 €" maxlength="80">
+                        <span class="card-type">Gain</span>
+                    </div>
+                    <div class="card-edit community-card">
+                        <span class="card-number">6</span>
+                        <input type="text" class="card-input" value="Héritage : recevez 100 €" maxlength="80">
+                        <span class="card-type">Gain</span>
+                    </div>
+                    <div class="card-edit community-card">
+                        <span class="card-number">7</span>
+                        <input type="text" class="card-input" value="Les contributions vous remboursent 20 €" maxlength="80">
+                        <span class="card-type">Gain</span>
+                    </div>
+                    <div class="card-edit community-card">
+                        <span class="card-number">8</span>
+                        <input type="text" class="card-input" value="Recevez votre intérêt : 25 €" maxlength="80">
+                        <span class="card-type">Gain</span>
+                    </div>
+                    <div class="card-edit community-card">
+                        <span class="card-number">9</span>
+                        <input type="text" class="card-input" value="C'est votre anniversaire : chaque joueur vous donne 10 €" maxlength="80">
+                        <span class="card-type">Gain</span>
+                    </div>
+                    <div class="card-edit community-card">
+                        <span class="card-number">10</span>
+                        <input type="text" class="card-input" value="Assurance vie : recevez 100 €" maxlength="80">
+                        <span class="card-type">Gain</span>
+                    </div>
+                    <div class="card-edit community-card">
+                        <span class="card-number">11</span>
+                        <input type="text" class="card-input" value="Payez la note du médecin : 50 €" maxlength="80">
+                        <span class="card-type">Paiement</span>
+                    </div>
+                    <div class="card-edit community-card">
+                        <span class="card-number">12</span>
+                        <input type="text" class="card-input" value="Payez l'hôpital : 100 €" maxlength="80">
+                        <span class="card-type">Paiement</span>
+                    </div>
+                    <div class="card-edit community-card">
+                        <span class="card-number">13</span>
+                        <input type="text" class="card-input" value="Payez une amende de 10 €" maxlength="80">
+                        <span class="card-type">Paiement</span>
+                    </div>
+                    <div class="card-edit community-card">
+                        <span class="card-number">14</span>
+                        <input type="text" class="card-input" value="Payez vos frais de scolarité : 50 €" maxlength="80">
+                        <span class="card-type">Paiement</span>
+                    </div>
+                    <div class="card-edit community-card">
+                        <span class="card-number">15</span>
+                        <input type="text" class="card-input" value="Réparations : 40 € par maison, 115 € par hôtel" maxlength="80">
+                        <span class="card-type">Paiement</span>
+                    </div>
+                    <div class="card-edit community-card">
+                        <span class="card-number">16</span>
+                        <input type="text" class="card-input" value="Vous êtes libéré de prison (à conserver)" maxlength="80">
+                        <span class="card-type">Spéciale</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Actions finales -->
+        <section class="section section-light">
+            <div class="container">
                 <div class="config-actions">
-                    <button id="resetBtn" class="btn btn-outline">Réinitialiser</button>
+                    <button id="resetBtn" class="btn btn-outline">Tout réinitialiser</button>
                     <a href="/devis/" class="btn btn-primary btn-lg">Demander un devis avec cette configuration</a>
                 </div>
             </div>
@@ -171,9 +360,9 @@ const cornerCases = cases.filter(c => c.type === "corner");
     <Footer />
 
     <script>
-        // Reset
+        // Reset all inputs
         document.getElementById('resetBtn')?.addEventListener('click', () => {
-            document.querySelectorAll<HTMLInputElement>('.cell-input, .corner-input, .center-title').forEach(el => {
+            document.querySelectorAll<HTMLInputElement>('.cell-input, .corner-input, .center-title, .card-input').forEach(el => {
                 el.value = el.defaultValue;
             });
         });
@@ -186,6 +375,17 @@ const cornerCases = cases.filter(c => c.type === "corner");
             });
             input.addEventListener('blur', () => {
                 input.closest('.cell, .board-center')?.classList.remove('editing');
+            });
+        });
+
+        // Card inputs: select on focus
+        document.querySelectorAll<HTMLInputElement>('.card-input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.select();
+                input.closest('.card-edit')?.classList.add('editing');
+            });
+            input.addEventListener('blur', () => {
+                input.closest('.card-edit')?.classList.remove('editing');
             });
         });
     </script>
@@ -448,9 +648,84 @@ const cornerCases = cases.filter(c => c.type === "corner");
         flex-wrap: wrap;
     }
 
+    /* Cards (Chance / Communauté) */
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .card-edit {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 16px;
+        border-radius: 10px;
+        border: 2px solid transparent;
+        transition: all 0.2s;
+    }
+    .card-edit.editing {
+        border-color: var(--color-primary);
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .chance-card {
+        background: #FFF8E1;
+        border-color: #FFE082;
+    }
+    .community-card {
+        background: #E3F2FD;
+        border-color: #90CAF9;
+    }
+    .card-number {
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-family: var(--font-heading);
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #fff;
+    }
+    .chance-card .card-number { background: #F57C00; }
+    .community-card .card-number { background: #1565C0; }
+    .card-input {
+        flex: 1;
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        color: var(--color-text);
+        background: transparent;
+        border: none;
+        border-bottom: 1px dashed rgba(0,0,0,0.15);
+        padding: 4px 0;
+        transition: all 0.2s;
+    }
+    .card-input:focus {
+        outline: none;
+        border-bottom-color: var(--color-primary);
+        background: rgba(255,255,255,0.6);
+    }
+    .card-input:hover {
+        border-bottom-color: rgba(0,0,0,0.3);
+    }
+    .card-type {
+        flex-shrink: 0;
+        font-size: 0.7rem;
+        font-weight: 600;
+        padding: 3px 8px;
+        border-radius: 50px;
+        color: #fff;
+        background: #9E9E9E;
+    }
+    .chance-card .card-type { background: #E65100; }
+    .community-card .card-type { background: #0D47A1; }
+
     @media (max-width: 768px) {
         .config-hero { padding: 110px 0 30px; }
         .config-hero h1 { font-size: 1.8rem; }
         .board-wrapper { justify-content: flex-start; }
+        .cards-grid { grid-template-columns: 1fr; }
+        .config-actions { flex-direction: column; align-items: center; }
     }
 </style>
