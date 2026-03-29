@@ -49,13 +49,9 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
                             <li><a href="#éditions">Les éditions les plus folles</a></li>
                             <li><a href="#personnalisé">Et aujourd'hui : le Monopoly personnalisé</a></li>
                         </ul>
-                    </details>
-                </div>
-            </nav>
-
-            <!-- Contenu -->
-            <div class="article-content">
-                <div class="container content-container">
+                        </div>
+                    </aside>
+                    <div class="article-main">
 
                     <section id="origines">
                         <h2>1903 — Une femme, une idée politique</h2>
@@ -218,7 +214,6 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 
                     </div>
                 </div>
-            </div>
         </article>
     </main>
     <Footer />
@@ -284,59 +279,76 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
         line-height: 1.7;
     }
 
-    /* TOC */
-    .toc {
-        padding: 24px 0;
+    /* Layout */
+    .article-body { padding: 40px 0 80px; }
+    .article-layout {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: 48px;
+        max-width: 1100px;
+    }
+    .toc-sidebar { align-self: start; }
+    .toc-sticky {
+        position: sticky;
+        top: 90px;
         background: var(--color-bg-light);
-        border-bottom: 1px solid var(--color-border);
+        border-radius: var(--radius);
+        padding: 20px;
+        border: 1px solid var(--color-border);
     }
-    .toc summary {
-        cursor: pointer;
+    .toc-title {
         font-family: var(--font-heading);
-        font-size: 1rem;
+        font-size: 0.95rem;
         color: var(--color-primary-dark);
+        margin-bottom: 12px;
     }
-    .toc ol {
-        margin: 12px 0 0 20px;
+    .toc-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
         display: flex;
         flex-direction: column;
         gap: 6px;
     }
-    .toc a {
-        font-size: 0.9rem;
-        color: var(--color-primary);
+    .toc-list li a {
+        font-size: 0.82rem;
+        color: var(--color-text-light);
+        line-height: 1.4;
+        display: block;
+        padding: 3px 0;
+        transition: color 0.2s;
     }
-    .toc a:hover { text-decoration: underline; }
+    .toc-list li a:hover { color: var(--color-primary); }
 
     /* Content */
-    .content-container { max-width: 780px; }
-    .article-content { padding: 50px 0 80px; }
-    .article-content section { margin-bottom: 48px; }
-    .article-content h2 {
+    .article-main { max-width: 780px; }
+    .article-main section { margin-bottom: 48px; }
+    .article-main h2 {
         font-family: var(--font-heading);
         font-size: 1.8rem;
         color: var(--color-primary-dark);
-        margin-bottom: 16px;
-        padding-top: 16px;
+        margin: 40px 0 16px;
+        padding-top: 8px;
     }
-    .article-content h3 {
+    .article-main h3 {
         font-family: var(--font-heading);
         font-size: 1.25rem;
         color: var(--color-primary-dark);
-        margin: 24px 0 10px;
+        margin: 32px 0 12px;
     }
-    .article-content p {
+    .article-main p {
         font-size: 1.05rem;
         line-height: 1.8;
         color: var(--color-text);
-        margin-bottom: 14px;
+        margin-bottom: 16px;
     }
-    .article-content ul, .article-content ol {
+    .article-main ul, .article-main ol {
         margin: 12px 0 20px 24px;
         font-size: 1.05rem;
         line-height: 1.8;
     }
-    .article-content li { margin-bottom: 8px; }
+    .article-main li { margin-bottom: 8px; }
+    .article-main a { color: var(--color-primary); text-decoration: underline; }
 
     /* Blockquote */
     blockquote {
