@@ -30,7 +30,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
                         <input type="hidden" name="subject" value="Nouveau message — Mon Quartier (Contact)">
                         <input type="hidden" name="from_name" value="Formulaire Contact">
                         <input type="hidden" name="redirect" value="https://monquartier-jeu.fr/contact/merci/">
-                        <input type="checkbox" name="botcheck" style="display:none">
+                        <input type="hidden" name="botcheck" value="">
 
                         <div class="form-grid">
                             <div class="form-group">
@@ -58,7 +58,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 
                         <div class="form-group">
                             <label for="message">Votre message *</label>
-                            <textarea id="message" name="message" rows="7" required placeholder="Décrivez votre demande en quelques lignes..."></textarea>
+                            <textarea id="message" name="message" rows="7" placeholder="Décrivez votre demande en quelques lignes..."></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-lg btn-submit">Envoyer mon message</button>
