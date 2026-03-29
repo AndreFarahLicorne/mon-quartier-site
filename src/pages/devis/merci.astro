@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout
+    title="Demande envoyée"
+    description="Merci pour votre demande de devis. Nous vous répondrons sous 48h."
+>
+    <Navbar />
+    <main>
+        <section class="merci-section">
+            <div class="container merci-container">
+                <div class="merci-icon">✅</div>
+                <h1>Demande envoyée !</h1>
+                <p>Merci pour votre demande. Notre équipe vous répondra sous <strong>48 heures</strong> avec une proposition personnalisée.</p>
+                <div class="merci-actions">
+                    <a href="/" class="btn btn-primary btn-lg">Retour à l'accueil</a>
+                    <a href="/blog/" class="btn btn-outline btn-lg">Lire nos articles</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
+</Layout>
+
+<style>
+    .merci-section {
+        padding: 180px 0 120px;
+        background: linear-gradient(135deg, #e8f5e9 0%, #f0f7f0 100%);
+    }
+    .merci-container {
+        text-align: center;
+        max-width: 600px;
+    }
+    .merci-icon {
+        font-size: 4rem;
+        margin-bottom: 24px;
+    }
+    .merci-container h1 {
+        font-family: var(--font-heading);
+        font-size: 2.5rem;
+        color: var(--color-primary-dark);
+        margin-bottom: 16px;
+    }
+    .merci-container p {
+        font-size: 1.15rem;
+        color: var(--color-text-light);
+        line-height: 1.7;
+        margin-bottom: 32px;
+    }
+    .merci-actions {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+</style>

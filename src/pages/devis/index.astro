@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout
@@ -28,6 +28,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
                     <form id="devisForm" class="devis-form" action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="079156f8-d186-4ef3-99d5-28c6b1973be9">
                         <input type="hidden" name="subject" value="Nouvelle demande de devis — Mon Quartier">
+                        <input type="hidden" name="redirect" value="https://monquartier-jeu.fr/devis/merci/">
                         <input type="checkbox" name="botcheck" style="display:none">
 
                         <div class="form-grid">
@@ -79,11 +80,6 @@ import Breadcrumb from '../components/Breadcrumb.astro';
                         <p class="form-note">* Champs obligatoires — Réponse garantie sous 48h</p>
                     </form>
 
-                    <div id="formSuccess" class="form-success" hidden>
-                        <div class="success-icon">✅</div>
-                        <h3>Demande envoyée !</h3>
-                        <p>Merci pour votre demande. Nous vous répondrons sous 48h avec une proposition personnalisée.</p>
-                    </div>
                 </div>
 
                 <aside class="devis-sidebar">
@@ -117,33 +113,6 @@ import Breadcrumb from '../components/Breadcrumb.astro';
     </main>
     <Footer />
 
-    <script>
-        const form = document.getElementById('devisForm') as HTMLFormElement | null;
-        const success = document.getElementById('formSuccess');
-        form?.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-            btn.textContent = 'Envoi en cours...';
-            btn.disabled = true;
-            try {
-                const res = await fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    body: new FormData(form),
-                });
-                if (res.ok) {
-                    form.hidden = true;
-                    if (success) success.hidden = false;
-                    success?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                } else {
-                    btn.textContent = 'Erreur, veuillez réessayer';
-                    btn.disabled = false;
-                }
-            } catch {
-                btn.textContent = 'Erreur, veuillez réessayer';
-                btn.disabled = false;
-            }
-        });
-    </script>
 </Layout>
 
 <style>
