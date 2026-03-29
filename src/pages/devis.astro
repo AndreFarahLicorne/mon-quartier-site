@@ -6,29 +6,28 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 ---
 
 <Layout
-    title="Contactez-nous"
-    description="Une question sur nos jeux de plateau personnalisés ? Contactez l'équipe Mon Quartier via notre formulaire. Réponse garantie sous 48h."
+    title="Demander un devis gratuit"
+    description="Décrivez votre projet de jeu de plateau personnalisé et recevez une proposition sur mesure sous 48h. Devis gratuit et sans engagement."
 >
     <Navbar />
     <main>
-        <section class="contact-hero">
+        <section class="devis-hero">
             <div class="container">
                 <Breadcrumb items={[
                     { label: "Accueil", href: "/" },
-                    { label: "Contact" },
+                    { label: "Demander un devis" },
                 ]} />
-                <h1>Contactez-nous</h1>
-                <p class="contact-subtitle">Une question, une idée de projet, un partenariat ? Écrivez-nous, on vous répond sous 48h.</p>
+                <h1>Demandez votre devis gratuit</h1>
+                <p class="devis-subtitle">Décrivez-nous votre projet et recevez une proposition personnalisée sous 48h. C'est gratuit et sans engagement.</p>
             </div>
         </section>
 
         <section class="section section-light">
-            <div class="container contact-layout">
-                <div class="contact-form-wrapper">
-                    <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <div class="container devis-layout">
+                <div class="devis-form-wrapper">
+                    <form id="devisForm" class="devis-form" action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="079156f8-d186-4ef3-99d5-28c6b1973be9">
-                        <input type="hidden" name="subject" value="Nouveau message — Mon Quartier (Contact)">
-                        <input type="hidden" name="from_name" value="Formulaire Contact">
+                        <input type="hidden" name="subject" value="Nouvelle demande de devis — Mon Quartier">
                         <input type="checkbox" name="botcheck" style="display:none">
 
                         <div class="form-grid">
@@ -40,53 +39,77 @@ import Breadcrumb from '../components/Breadcrumb.astro';
                                 <label for="email">Email *</label>
                                 <input type="email" id="email" name="email" required placeholder="votre@email.com" autocomplete="email">
                             </div>
+                            <div class="form-group">
+                                <label for="telephone">Téléphone</label>
+                                <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" autocomplete="tel">
+                            </div>
+                            <div class="form-group">
+                                <label for="occasion">Type de projet *</label>
+                                <select id="occasion" name="occasion" required>
+                                    <option value="" disabled selected>Choisissez une occasion</option>
+                                    <option value="quartier">Jeu de quartier / ville</option>
+                                    <option value="mariage">Mariage</option>
+                                    <option value="anniversaire">Anniversaire</option>
+                                    <option value="entreprise">Entreprise / Team building</option>
+                                    <option value="association">Association / Comité</option>
+                                    <option value="cadeau">Cadeau personnalisé</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="quantite">Nombre d'exemplaires souhaités</label>
+                                <select id="quantite" name="quantite">
+                                    <option value="" disabled selected>Sélectionnez une quantité</option>
+                                    <option value="1">1 exemplaire</option>
+                                    <option value="2-5">2 à 5 exemplaires</option>
+                                    <option value="6-20">6 à 20 exemplaires</option>
+                                    <option value="21-50">21 à 50 exemplaires</option>
+                                    <option value="51-100">51 à 100 exemplaires</option>
+                                    <option value="100+">Plus de 100 exemplaires</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="sujet">Sujet *</label>
-                            <select id="sujet" name="sujet" required>
-                                <option value="" disabled selected>Choisissez un sujet</option>
-                                <option value="question">Question sur les jeux personnalisés</option>
-                                <option value="devis">Demande de devis</option>
-                                <option value="commande">Suivi de commande</option>
-                                <option value="partenariat">Proposition de partenariat</option>
-                                <option value="presse">Presse / Média</option>
-                                <option value="autre">Autre</option>
-                            </select>
+                            <label for="message">Décrivez votre projet *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Parlez-nous de votre quartier, de l'occasion, de vos idées de personnalisation..."></textarea>
                         </div>
 
-                        <div class="form-group">
-                            <label for="message">Votre message *</label>
-                            <textarea id="message" name="message" rows="7" required placeholder="Décrivez votre demande en quelques lignes..."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-lg btn-submit">Envoyer mon message</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-submit">Envoyer ma demande de devis</button>
                         <p class="form-note">* Champs obligatoires — Réponse garantie sous 48h</p>
                     </form>
 
-                    <div id="contactSuccess" class="form-success" hidden>
+                    <div id="formSuccess" class="form-success" hidden>
                         <div class="success-icon">✅</div>
-                        <h3>Message envoyé !</h3>
-                        <p>Merci pour votre message. Nous vous répondrons sous 48h.</p>
+                        <h3>Demande envoyée !</h3>
+                        <p>Merci pour votre demande. Nous vous répondrons sous 48h avec une proposition personnalisée.</p>
                     </div>
                 </div>
 
-                <aside class="contact-sidebar">
+                <aside class="devis-sidebar">
                     <div class="sidebar-card">
-                        <h3>Vous avez un projet précis ?</h3>
-                        <p>Si vous souhaitez créer un jeu de plateau personnalisé, utilisez plutôt notre formulaire de devis dédié. Il nous permettra de mieux comprendre votre projet.</p>
-                        <a href="/devis/" class="btn btn-outline">Demander un devis</a>
+                        <div class="sidebar-icon">🎯</div>
+                        <h3>Comment ça marche ?</h3>
+                        <ol class="sidebar-steps">
+                            <li>Vous remplissez ce formulaire</li>
+                            <li>On vous recontacte sous 48h</li>
+                            <li>On crée la maquette ensemble</li>
+                            <li>Vous validez, on fabrique, on livre</li>
+                        </ol>
                     </div>
 
                     <div class="sidebar-card">
-                        <h3>Questions fréquentes</h3>
-                        <p>Vous trouverez peut-être la réponse à votre question dans notre FAQ sur la page d'accueil.</p>
-                        <a href="/#contact" class="btn btn-outline">Voir la FAQ</a>
+                        <div class="sidebar-icon">💬</div>
+                        <h3>Une question ?</h3>
+                        <p>Vous préférez nous écrire directement ? Utilisez notre formulaire de contact.</p>
+                        <a href="/contact/" class="btn btn-outline btn-sm">Page contact</a>
                     </div>
 
                     <div class="sidebar-card">
-                        <h3>Délai de réponse</h3>
-                        <p>Nous répondons à tous les messages sous <strong>48 heures ouvrées</strong>. Pour les demandes urgentes, précisez-le dans votre message.</p>
+                        <div class="sidebar-icon">⭐</div>
+                        <h3>Ce qu'en disent nos clients</h3>
+                        <p class="sidebar-quote">"On a offert le jeu à mon père pour ses 60 ans. Il était ému aux larmes !"</p>
+                        <span class="sidebar-author">— Sophie L.</span>
                     </div>
                 </aside>
             </div>
@@ -95,8 +118,8 @@ import Breadcrumb from '../components/Breadcrumb.astro';
     <Footer />
 
     <script>
-        const form = document.getElementById('contactForm') as HTMLFormElement | null;
-        const success = document.getElementById('contactSuccess');
+        const form = document.getElementById('devisForm') as HTMLFormElement | null;
+        const success = document.getElementById('formSuccess');
         form?.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
@@ -124,32 +147,31 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 </Layout>
 
 <style>
-    .contact-hero {
+    .devis-hero {
         padding: 140px 0 50px;
-        background: linear-gradient(135deg, #f0f7f0 0%, #e8f5e9 100%);
+        background: linear-gradient(135deg, #e8f5e9 0%, #f0f7f0 100%);
     }
-    .contact-hero h1 {
+    .devis-hero h1 {
         font-family: var(--font-heading);
         font-size: 2.8rem;
         color: var(--color-primary-dark);
         margin-bottom: 12px;
     }
-    .contact-subtitle {
+    .devis-subtitle {
         font-size: 1.15rem;
         color: var(--color-text-light);
         max-width: 550px;
         line-height: 1.7;
     }
 
-    .contact-layout {
+    .devis-layout {
         display: grid;
-        grid-template-columns: 1fr 340px;
+        grid-template-columns: 1fr 320px;
         gap: 48px;
         align-items: start;
     }
 
-    /* Form */
-    .contact-form {
+    .devis-form {
         background: var(--color-bg);
         padding: 40px;
         border-radius: var(--radius-lg);
@@ -218,7 +240,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
     .form-success p { color: var(--color-text-light); }
 
     /* Sidebar */
-    .contact-sidebar {
+    .devis-sidebar {
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -229,11 +251,15 @@ import Breadcrumb from '../components/Breadcrumb.astro';
         padding: 24px;
         border: 1px solid var(--color-border);
     }
+    .sidebar-icon {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
     .sidebar-card h3 {
         font-family: var(--font-heading);
         font-size: 1.05rem;
         color: var(--color-primary-dark);
-        margin-bottom: 8px;
+        margin-bottom: 10px;
     }
     .sidebar-card p {
         font-size: 0.9rem;
@@ -241,19 +267,36 @@ import Breadcrumb from '../components/Breadcrumb.astro';
         line-height: 1.6;
         margin-bottom: 12px;
     }
-    .sidebar-card .btn-outline {
+    .sidebar-steps {
+        margin: 0 0 0 18px;
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+        line-height: 1.8;
+    }
+    .sidebar-steps li {
+        margin-bottom: 4px;
+    }
+    .sidebar-quote {
+        font-style: italic;
+    }
+    .sidebar-author {
+        font-size: 0.85rem;
+        color: var(--color-text-light);
+        font-weight: 600;
+    }
+    .btn-sm {
         font-size: 0.85rem;
         padding: 8px 20px;
     }
 
     @media (max-width: 768px) {
-        .contact-hero { padding: 110px 0 40px; }
-        .contact-hero h1 { font-size: 2rem; }
-        .contact-layout {
+        .devis-hero { padding: 110px 0 40px; }
+        .devis-hero h1 { font-size: 2rem; }
+        .devis-layout {
             grid-template-columns: 1fr;
             gap: 32px;
         }
-        .contact-form { padding: 24px 20px; }
+        .devis-form { padding: 24px 20px; }
         .form-grid { grid-template-columns: 1fr; }
     }
 </style>
