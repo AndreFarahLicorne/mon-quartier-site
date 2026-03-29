@@ -3,68 +3,61 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
-// 40 cases du Monopoly classique avec groupes de couleurs
 const cases = [
-    { num: 1, side: "bottom", type: "corner", name: "DÉPART", group: null, editable: false },
-    { num: 2, side: "bottom", type: "terrain", name: "Boulevard de Belleville", group: "brown", editable: true },
-    { num: 3, side: "bottom", type: "communaute", name: "Caisse de communauté", group: null, editable: false },
-    { num: 4, side: "bottom", type: "terrain", name: "Rue Lecourbe", group: "brown", editable: true },
-    { num: 5, side: "bottom", type: "taxe", name: "Impôt sur le revenu", group: null, editable: false },
-    { num: 6, side: "bottom", type: "gare", name: "Gare Montparnasse", group: "gare", editable: true },
-    { num: 7, side: "bottom", type: "terrain", name: "Rue de Vaugirard", group: "lightblue", editable: true },
-    { num: 8, side: "bottom", type: "chance", name: "Chance", group: null, editable: false },
-    { num: 9, side: "bottom", type: "terrain", name: "Rue de Courcelles", group: "lightblue", editable: true },
-    { num: 10, side: "bottom", type: "terrain", name: "Avenue de la République", group: "lightblue", editable: true },
-    { num: 11, side: "left", type: "corner", name: "PRISON", group: null, editable: false },
-    { num: 12, side: "left", type: "terrain", name: "Boulevard de la Villette", group: "pink", editable: true },
-    { num: 13, side: "left", type: "compagnie", name: "Compagnie d'électricité", group: "compagnie", editable: true },
-    { num: 14, side: "left", type: "terrain", name: "Avenue de Neuilly", group: "pink", editable: true },
-    { num: 15, side: "left", type: "terrain", name: "Rue du Paradis", group: "pink", editable: true },
-    { num: 16, side: "left", type: "gare", name: "Gare de Lyon", group: "gare", editable: true },
-    { num: 17, side: "left", type: "terrain", name: "Avenue Mozart", group: "orange", editable: true },
-    { num: 18, side: "left", type: "communaute", name: "Caisse de communauté", group: null, editable: false },
-    { num: 19, side: "left", type: "terrain", name: "Boulevard Saint-Michel", group: "orange", editable: true },
-    { num: 20, side: "left", type: "terrain", name: "Place Pigalle", group: "orange", editable: true },
-    { num: 21, side: "top", type: "corner", name: "PARKING GRATUIT", group: null, editable: false },
-    { num: 22, side: "top", type: "terrain", name: "Avenue Matignon", group: "red", editable: true },
-    { num: 23, side: "top", type: "chance", name: "Chance", group: null, editable: false },
-    { num: 24, side: "top", type: "terrain", name: "Boulevard Malesherbes", group: "red", editable: true },
-    { num: 25, side: "top", type: "terrain", name: "Avenue Henri-Martin", group: "red", editable: true },
-    { num: 26, side: "top", type: "gare", name: "Gare du Nord", group: "gare", editable: true },
-    { num: 27, side: "top", type: "terrain", name: "Faubourg Saint-Honoré", group: "yellow", editable: true },
-    { num: 28, side: "top", type: "terrain", name: "Place de la Bourse", group: "yellow", editable: true },
-    { num: 29, side: "top", type: "compagnie", name: "Compagnie des eaux", group: "compagnie", editable: true },
-    { num: 30, side: "top", type: "terrain", name: "Rue La Fayette", group: "yellow", editable: true },
-    { num: 31, side: "right", type: "corner", name: "ALLEZ EN PRISON", group: null, editable: false },
-    { num: 32, side: "right", type: "terrain", name: "Avenue de Breteuil", group: "green", editable: true },
-    { num: 33, side: "right", type: "terrain", name: "Avenue Foch", group: "green", editable: true },
-    { num: 34, side: "right", type: "communaute", name: "Caisse de communauté", group: null, editable: false },
-    { num: 35, side: "right", type: "terrain", name: "Boulevard des Capucines", group: "green", editable: true },
-    { num: 36, side: "right", type: "gare", name: "Gare Saint-Lazare", group: "gare", editable: true },
-    { num: 37, side: "right", type: "chance", name: "Chance", group: null, editable: false },
-    { num: 38, side: "right", type: "terrain", name: "Avenue des Champs-Élysées", group: "darkblue", editable: true },
-    { num: 39, side: "right", type: "taxe", name: "Taxe de luxe", group: null, editable: false },
-    { num: 40, side: "right", type: "terrain", name: "Rue de la Paix", group: "darkblue", editable: true },
+    { num: 1, side: "bottom", type: "corner", name: "DÉPART", group: null, price: null },
+    { num: 2, side: "bottom", type: "terrain", name: "Bd de Belleville", group: "brown", price: 60 },
+    { num: 3, side: "bottom", type: "communaute", name: "Communauté", group: null, price: null },
+    { num: 4, side: "bottom", type: "terrain", name: "Rue Lecourbe", group: "brown", price: 60 },
+    { num: 5, side: "bottom", type: "taxe", name: "Impôts", group: null, price: 200 },
+    { num: 6, side: "bottom", type: "gare", name: "Gare Montparnasse", group: "gare", price: 200 },
+    { num: 7, side: "bottom", type: "terrain", name: "Rue de Vaugirard", group: "lightblue", price: 100 },
+    { num: 8, side: "bottom", type: "chance", name: "Chance", group: null, price: null },
+    { num: 9, side: "bottom", type: "terrain", name: "Rue de Courcelles", group: "lightblue", price: 100 },
+    { num: 10, side: "bottom", type: "terrain", name: "Av. de la République", group: "lightblue", price: 120 },
+    { num: 11, side: "left", type: "corner", name: "PRISON", group: null, price: null },
+    { num: 12, side: "left", type: "terrain", name: "Bd de la Villette", group: "pink", price: 140 },
+    { num: 13, side: "left", type: "compagnie", name: "Cie d'électricité", group: "compagnie", price: 150 },
+    { num: 14, side: "left", type: "terrain", name: "Av. de Neuilly", group: "pink", price: 140 },
+    { num: 15, side: "left", type: "terrain", name: "Rue du Paradis", group: "pink", price: 160 },
+    { num: 16, side: "left", type: "gare", name: "Gare de Lyon", group: "gare", price: 200 },
+    { num: 17, side: "left", type: "terrain", name: "Avenue Mozart", group: "orange", price: 180 },
+    { num: 18, side: "left", type: "communaute", name: "Communauté", group: null, price: null },
+    { num: 19, side: "left", type: "terrain", name: "Bd Saint-Michel", group: "orange", price: 180 },
+    { num: 20, side: "left", type: "terrain", name: "Place Pigalle", group: "orange", price: 200 },
+    { num: 21, side: "top", type: "corner", name: "PARKING GRATUIT", group: null, price: null },
+    { num: 22, side: "top", type: "terrain", name: "Av. Matignon", group: "red", price: 220 },
+    { num: 23, side: "top", type: "chance", name: "Chance", group: null, price: null },
+    { num: 24, side: "top", type: "terrain", name: "Bd Malesherbes", group: "red", price: 220 },
+    { num: 25, side: "top", type: "terrain", name: "Av. Henri-Martin", group: "red", price: 240 },
+    { num: 26, side: "top", type: "gare", name: "Gare du Nord", group: "gare", price: 200 },
+    { num: 27, side: "top", type: "terrain", name: "Fg Saint-Honoré", group: "yellow", price: 260 },
+    { num: 28, side: "top", type: "terrain", name: "Place de la Bourse", group: "yellow", price: 260 },
+    { num: 29, side: "top", type: "compagnie", name: "Cie des eaux", group: "compagnie", price: 150 },
+    { num: 30, side: "top", type: "terrain", name: "Rue La Fayette", group: "yellow", price: 280 },
+    { num: 31, side: "right", type: "corner", name: "ALLEZ EN PRISON", group: null, price: null },
+    { num: 32, side: "right", type: "terrain", name: "Av. de Breteuil", group: "green", price: 300 },
+    { num: 33, side: "right", type: "terrain", name: "Avenue Foch", group: "green", price: 300 },
+    { num: 34, side: "right", type: "communaute", name: "Communauté", group: null, price: null },
+    { num: 35, side: "right", type: "terrain", name: "Bd des Capucines", group: "green", price: 320 },
+    { num: 36, side: "right", type: "gare", name: "Gare Saint-Lazare", group: "gare", price: 200 },
+    { num: 37, side: "right", type: "chance", name: "Chance", group: null, price: null },
+    { num: 38, side: "right", type: "terrain", name: "Av. Champs-Élysées", group: "darkblue", price: 350 },
+    { num: 39, side: "right", type: "taxe", name: "Taxe de luxe", group: null, price: 100 },
+    { num: 40, side: "right", type: "terrain", name: "Rue de la Paix", group: "darkblue", price: 400 },
 ];
 
 const groupColors: Record<string, string> = {
-    brown: "#8B4513",
-    lightblue: "#87CEEB",
-    pink: "#D81B60",
-    orange: "#F57C00",
-    red: "#D32F2F",
-    yellow: "#FDD835",
-    green: "#388E3C",
-    darkblue: "#0D47A1",
-    gare: "#333333",
-    compagnie: "#78909C",
+    brown: "#8B4513", lightblue: "#87CEEB", pink: "#D81B60", orange: "#F57C00",
+    red: "#D32F2F", yellow: "#FDD835", green: "#388E3C", darkblue: "#0D47A1",
+    gare: "#333333", compagnie: "#78909C",
 };
 
-// Layout: bottom row = cases 2-10 (right to left), left = 12-20 (bottom to top), top = 22-30 (left to right), right = 32-40 (top to bottom)
 const bottomCells = cases.filter(c => c.side === "bottom" && c.type !== "corner").reverse();
 const leftCells = cases.filter(c => c.side === "left" && c.type !== "corner");
 const topCells = cases.filter(c => c.side === "top" && c.type !== "corner");
 const rightCells = cases.filter(c => c.side === "right" && c.type !== "corner");
+
+const cornerCases = cases.filter(c => c.type === "corner");
 ---
 
 <Layout
@@ -76,7 +69,7 @@ const rightCells = cases.filter(c => c.side === "right" && c.type !== "corner");
         <section class="config-hero">
             <div class="container">
                 <h1>Configurez votre plateau</h1>
-                <p class="config-subtitle">Cliquez sur n'importe quelle case pour remplacer le nom par le vôtre. Les cases grises ne sont pas modifiables.</p>
+                <p class="config-subtitle">Cliquez sur n'importe quelle case pour la personnaliser.</p>
             </div>
         </section>
 
@@ -91,72 +84,60 @@ const rightCells = cases.filter(c => c.side === "right" && c.type !== "corner");
                         </div>
 
                         <!-- Coins -->
-                        <div class="cell corner corner-bl"><span class="corner-text">DÉPART</span></div>
-                        <div class="cell corner corner-tl"><span class="corner-text">PARKING GRATUIT</span></div>
-                        <div class="cell corner corner-tr"><span class="corner-text">ALLEZ EN PRISON</span></div>
-                        <div class="cell corner corner-br"><span class="corner-text">PRISON</span></div>
+                        <div class="cell corner corner-bl">
+                            <input type="text" class="corner-input" value="DÉPART" maxlength="15" aria-label="Case Départ">
+                        </div>
+                        <div class="cell corner corner-tl">
+                            <input type="text" class="corner-input" value="PARKING GRATUIT" maxlength="20" aria-label="Case Parking Gratuit">
+                        </div>
+                        <div class="cell corner corner-tr">
+                            <input type="text" class="corner-input" value="ALLEZ EN PRISON" maxlength="20" aria-label="Case Allez en Prison">
+                        </div>
+                        <div class="cell corner corner-br">
+                            <input type="text" class="corner-input" value="PRISON" maxlength="15" aria-label="Case Prison">
+                        </div>
 
-                        <!-- Bottom row (cases 10 to 2, right to left) -->
+                        <!-- Bottom row -->
                         {bottomCells.map((c, i) => (
-                            <div
-                                class={`cell cell-bottom cell-b${i + 1} ${c.editable ? 'editable' : 'locked'}`}
-                                data-num={c.num}
-                                data-type={c.type}
-                            >
+                            <div class={`cell cell-bottom cell-b${i + 1}`} data-num={c.num} data-type={c.type}>
                                 {c.group && <div class="color-band band-top" style={`background: ${groupColors[c.group]};`}></div>}
-                                {c.editable ? (
-                                    <input type="text" class="cell-input" value={c.name} maxlength="30" aria-label={`Case ${c.num}`}>
-                                ) : (
-                                    <span class="cell-label">{c.name}</span>
-                                )}
+                                <div class="cell-content">
+                                    <input type="text" class="cell-input" value={c.name} maxlength="25" aria-label={`Case ${c.num}`}>
+                                    {c.price && <span class="cell-price">{c.price} €</span>}
+                                </div>
                             </div>
                         ))}
 
-                        <!-- Left column (cases 12 to 20, bottom to top) -->
+                        <!-- Left column -->
                         {leftCells.map((c, i) => (
-                            <div
-                                class={`cell cell-left cell-l${i + 1} ${c.editable ? 'editable' : 'locked'}`}
-                                data-num={c.num}
-                                data-type={c.type}
-                            >
+                            <div class={`cell cell-left cell-l${i + 1}`} data-num={c.num} data-type={c.type}>
                                 {c.group && <div class="color-band band-right" style={`background: ${groupColors[c.group]};`}></div>}
-                                {c.editable ? (
-                                    <input type="text" class="cell-input" value={c.name} maxlength="30" aria-label={`Case ${c.num}`}>
-                                ) : (
-                                    <span class="cell-label">{c.name}</span>
-                                )}
+                                <div class="cell-content">
+                                    <input type="text" class="cell-input" value={c.name} maxlength="25" aria-label={`Case ${c.num}`}>
+                                    {c.price && <span class="cell-price">{c.price} €</span>}
+                                </div>
                             </div>
                         ))}
 
-                        <!-- Top row (cases 22 to 30, left to right) -->
+                        <!-- Top row -->
                         {topCells.map((c, i) => (
-                            <div
-                                class={`cell cell-top cell-t${i + 1} ${c.editable ? 'editable' : 'locked'}`}
-                                data-num={c.num}
-                                data-type={c.type}
-                            >
+                            <div class={`cell cell-top cell-t${i + 1}`} data-num={c.num} data-type={c.type}>
                                 {c.group && <div class="color-band band-bottom" style={`background: ${groupColors[c.group]};`}></div>}
-                                {c.editable ? (
-                                    <input type="text" class="cell-input" value={c.name} maxlength="30" aria-label={`Case ${c.num}`}>
-                                ) : (
-                                    <span class="cell-label">{c.name}</span>
-                                )}
+                                <div class="cell-content">
+                                    <input type="text" class="cell-input" value={c.name} maxlength="25" aria-label={`Case ${c.num}`}>
+                                    {c.price && <span class="cell-price">{c.price} €</span>}
+                                </div>
                             </div>
                         ))}
 
-                        <!-- Right column (cases 32 to 40, top to bottom) -->
+                        <!-- Right column -->
                         {rightCells.map((c, i) => (
-                            <div
-                                class={`cell cell-right cell-r${i + 1} ${c.editable ? 'editable' : 'locked'}`}
-                                data-num={c.num}
-                                data-type={c.type}
-                            >
+                            <div class={`cell cell-right cell-r${i + 1}`} data-num={c.num} data-type={c.type}>
                                 {c.group && <div class="color-band band-left" style={`background: ${groupColors[c.group]};`}></div>}
-                                {c.editable ? (
-                                    <input type="text" class="cell-input" value={c.name} maxlength="30" aria-label={`Case ${c.num}`}>
-                                ) : (
-                                    <span class="cell-label">{c.name}</span>
-                                )}
+                                <div class="cell-content">
+                                    <input type="text" class="cell-input" value={c.name} maxlength="25" aria-label={`Case ${c.num}`}>
+                                    {c.price && <span class="cell-price">{c.price} €</span>}
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -166,18 +147,17 @@ const rightCells = cases.filter(c => c.side === "right" && c.type !== "corner");
                 <div class="legend">
                     <h3>Groupes de couleurs</h3>
                     <div class="legend-items">
-                        <div class="legend-item"><span class="legend-color" style="background: #8B4513;"></span>Marron</div>
-                        <div class="legend-item"><span class="legend-color" style="background: #87CEEB;"></span>Bleu clair</div>
-                        <div class="legend-item"><span class="legend-color" style="background: #D81B60;"></span>Rose</div>
-                        <div class="legend-item"><span class="legend-color" style="background: #F57C00;"></span>Orange</div>
-                        <div class="legend-item"><span class="legend-color" style="background: #D32F2F;"></span>Rouge</div>
-                        <div class="legend-item"><span class="legend-color" style="background: #FDD835;"></span>Jaune</div>
-                        <div class="legend-item"><span class="legend-color" style="background: #388E3C;"></span>Vert</div>
-                        <div class="legend-item"><span class="legend-color" style="background: #0D47A1;"></span>Bleu foncé</div>
-                        <div class="legend-item"><span class="legend-color" style="background: #333;"></span>Gares</div>
-                        <div class="legend-item"><span class="legend-color" style="background: #78909C;"></span>Compagnies</div>
+                        <div class="legend-item"><span class="legend-color" style="background: #8B4513;"></span>Marron (60 €)</div>
+                        <div class="legend-item"><span class="legend-color" style="background: #87CEEB;"></span>Bleu clair (100-120 €)</div>
+                        <div class="legend-item"><span class="legend-color" style="background: #D81B60;"></span>Rose (140-160 €)</div>
+                        <div class="legend-item"><span class="legend-color" style="background: #F57C00;"></span>Orange (180-200 €)</div>
+                        <div class="legend-item"><span class="legend-color" style="background: #D32F2F;"></span>Rouge (220-240 €)</div>
+                        <div class="legend-item"><span class="legend-color" style="background: #FDD835;"></span>Jaune (260-280 €)</div>
+                        <div class="legend-item"><span class="legend-color" style="background: #388E3C;"></span>Vert (300-320 €)</div>
+                        <div class="legend-item"><span class="legend-color" style="background: #0D47A1;"></span>Bleu foncé (350-400 €)</div>
+                        <div class="legend-item"><span class="legend-color" style="background: #333;"></span>Gares (200 €)</div>
+                        <div class="legend-item"><span class="legend-color" style="background: #78909C;"></span>Compagnies (150 €)</div>
                     </div>
-                    <p class="legend-note">28 cases modifiables (22 terrains + 4 gares + 2 compagnies). Les cases Chance, Communauté, Taxes et coins sont fixes.</p>
                 </div>
 
                 <!-- Actions -->
@@ -191,20 +171,17 @@ const rightCells = cases.filter(c => c.side === "right" && c.type !== "corner");
     <Footer />
 
     <script>
-        // Reset button
+        // Reset
         document.getElementById('resetBtn')?.addEventListener('click', () => {
-            document.querySelectorAll('.cell-input').forEach(input => {
-                const el = input as HTMLInputElement;
+            document.querySelectorAll<HTMLInputElement>('.cell-input, .corner-input, .center-title').forEach(el => {
                 el.value = el.defaultValue;
             });
-            const title = document.querySelector('.center-title') as HTMLInputElement;
-            if (title) title.value = title.defaultValue;
         });
 
-        // Highlight on focus
-        document.querySelectorAll('.cell-input, .center-title').forEach(input => {
+        // Focus: select all + highlight
+        document.querySelectorAll<HTMLInputElement>('.cell-input, .corner-input, .center-title').forEach(input => {
             input.addEventListener('focus', () => {
-                (input as HTMLInputElement).select();
+                input.select();
                 input.closest('.cell, .board-center')?.classList.add('editing');
             });
             input.addEventListener('blur', () => {
@@ -229,10 +206,7 @@ const rightCells = cases.filter(c => c.side === "right" && c.type !== "corner");
     .config-subtitle {
         font-size: 1.1rem;
         color: var(--color-text-light);
-        max-width: 550px;
-        margin: 0 auto;
     }
-
     .config-section {
         padding: 40px 0 80px;
     }
@@ -246,20 +220,19 @@ const rightCells = cases.filter(c => c.side === "right" && c.type !== "corner");
         padding: 16px;
     }
     .board {
-        width: 720px;
-        height: 720px;
-        min-width: 720px;
+        width: 760px;
+        height: 760px;
+        min-width: 760px;
         background: #c8e6c0;
         border: 3px solid #1a1a1a;
         border-radius: 6px;
         display: grid;
         grid-template-columns: 1.5fr repeat(9, 1fr) 1.5fr;
         grid-template-rows: 1.5fr repeat(9, 1fr) 1.5fr;
-        position: relative;
         box-shadow: 0 8px 32px rgba(0,0,0,0.15);
     }
 
-    /* Center */
+    /* Centre */
     .board-center {
         grid-column: 2 / 11;
         grid-row: 2 / 11;
@@ -271,7 +244,7 @@ const rightCells = cases.filter(c => c.side === "right" && c.type !== "corner");
     }
     .center-title {
         font-family: var(--font-heading);
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         font-weight: 700;
         color: #1a1a1a;
         text-align: center;
@@ -279,24 +252,17 @@ const rightCells = cases.filter(c => c.side === "right" && c.type !== "corner");
         border: 2px dashed transparent;
         border-radius: 8px;
         padding: 8px 16px;
-        width: 200px;
+        width: 220px;
         letter-spacing: 1px;
         transition: all 0.2s;
     }
-    .center-title:hover {
-        border-color: rgba(0,0,0,0.2);
-    }
-    .center-title:focus {
-        outline: none;
-        border-color: var(--color-primary);
-        background: rgba(255,255,255,0.8);
-    }
+    .center-title:hover { border-color: rgba(0,0,0,0.2); }
+    .center-title:focus { outline: none; border-color: var(--color-primary); background: rgba(255,255,255,0.8); }
     .center-sub {
         font-family: var(--font-heading);
         font-size: 0.7rem;
         color: #c0392b;
         letter-spacing: 3px;
-        text-transform: uppercase;
     }
 
     /* Corners */
@@ -306,18 +272,24 @@ const rightCells = cases.filter(c => c.side === "right" && c.type !== "corner");
         justify-content: center;
         background: #b8d4a8;
         border: 1px solid rgba(0,0,0,0.15);
-        padding: 4px;
     }
-    .corner-text {
+    .corner-input {
         font-family: var(--font-heading);
-        font-size: 0.5rem;
+        font-size: 0.45rem;
         font-weight: 700;
         text-transform: uppercase;
         text-align: center;
         color: #1a1a1a;
-        letter-spacing: 0.5px;
-        line-height: 1.2;
+        background: transparent;
+        border: 1px dashed transparent;
+        border-radius: 4px;
+        width: 90%;
+        padding: 4px 2px;
+        letter-spacing: 0.3px;
+        transition: all 0.2s;
     }
+    .corner-input:hover { border-color: rgba(0,0,0,0.2); }
+    .corner-input:focus { outline: none; border-color: var(--color-primary); background: rgba(255,255,255,0.8); font-size: 0.5rem; }
     .corner-bl { grid-column: 1; grid-row: 11; }
     .corner-tl { grid-column: 1; grid-row: 1; }
     .corner-tr { grid-column: 11; grid-row: 1; }
@@ -334,22 +306,28 @@ const rightCells = cases.filter(c => c.side === "right" && c.type !== "corner");
         overflow: hidden;
         transition: box-shadow 0.2s;
     }
-    .cell.editing {
-        box-shadow: inset 0 0 0 2px var(--color-primary);
-        z-index: 5;
-    }
-    .cell.locked {
-        background: #cce0c0;
-    }
+    .cell.editing { box-shadow: inset 0 0 0 2px var(--color-primary); z-index: 5; }
 
     /* Color bands */
-    .color-band {
-        position: absolute;
+    .color-band { position: absolute; }
+    .band-top { top: 0; left: 0; right: 0; height: 28%; }
+    .band-bottom { bottom: 0; left: 0; right: 0; height: 28%; }
+    .band-left { left: 0; top: 0; bottom: 0; width: 28%; }
+    .band-right { right: 0; top: 0; bottom: 0; width: 28%; }
+
+    /* Cell content wrapper */
+    .cell-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 2;
+        padding: 2px;
+        gap: 0;
     }
-    .band-top { top: 0; left: 0; right: 0; height: 25%; }
-    .band-bottom { bottom: 0; left: 0; right: 0; height: 25%; }
-    .band-left { left: 0; top: 0; bottom: 0; width: 25%; }
-    .band-right { right: 0; top: 0; bottom: 0; width: 25%; }
 
     /* Cell inputs */
     .cell-input {
@@ -360,60 +338,70 @@ const rightCells = cases.filter(c => c.side === "right" && c.type !== "corner");
         color: #1a1a1a;
         background: transparent;
         border: none;
-        width: 90%;
-        padding: 2px;
-        position: relative;
-        z-index: 2;
+        width: 95%;
+        padding: 1px 2px;
         cursor: pointer;
         transition: all 0.2s;
+        line-height: 1.1;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .cell-input:focus {
         outline: none;
         background: rgba(255,255,255,0.9);
-        border-radius: 3px;
-        font-size: 0.4rem;
+        border-radius: 2px;
         cursor: text;
+        font-size: 0.38rem;
     }
-    .cell-input:hover {
-        background: rgba(255,255,255,0.5);
-        border-radius: 3px;
+    .cell-input:hover { background: rgba(255,255,255,0.4); border-radius: 2px; }
+
+    /* Price */
+    .cell-price {
+        font-family: var(--font-body);
+        font-size: 0.3rem;
+        font-weight: 700;
+        color: #333;
+        line-height: 1;
     }
 
-    .cell-label {
-        font-family: var(--font-heading);
-        font-size: 0.32rem;
-        font-weight: 600;
-        text-align: center;
-        color: #666;
-        position: relative;
-        z-index: 2;
-        line-height: 1.2;
-    }
-
-    /* Grid positions */
+    /* Grid positions - Bottom */
     .cell-bottom { grid-row: 11; }
     .cell-b1 { grid-column: 10; } .cell-b2 { grid-column: 9; } .cell-b3 { grid-column: 8; }
     .cell-b4 { grid-column: 7; } .cell-b5 { grid-column: 6; } .cell-b6 { grid-column: 5; }
     .cell-b7 { grid-column: 4; } .cell-b8 { grid-column: 3; } .cell-b9 { grid-column: 2; }
 
+    /* Grid positions - Top */
     .cell-top { grid-row: 1; }
     .cell-t1 { grid-column: 2; } .cell-t2 { grid-column: 3; } .cell-t3 { grid-column: 4; }
     .cell-t4 { grid-column: 5; } .cell-t5 { grid-column: 6; } .cell-t6 { grid-column: 7; }
     .cell-t7 { grid-column: 8; } .cell-t8 { grid-column: 9; } .cell-t9 { grid-column: 10; }
 
+    /* Grid positions - Left */
     .cell-left { grid-column: 1; }
     .cell-l1 { grid-row: 10; } .cell-l2 { grid-row: 9; } .cell-l3 { grid-row: 8; }
     .cell-l4 { grid-row: 7; } .cell-l5 { grid-row: 6; } .cell-l6 { grid-row: 5; }
     .cell-l7 { grid-row: 4; } .cell-l8 { grid-row: 3; } .cell-l9 { grid-row: 2; }
 
+    /* Grid positions - Right */
     .cell-right { grid-column: 11; }
     .cell-r1 { grid-row: 2; } .cell-r2 { grid-row: 3; } .cell-r3 { grid-row: 4; }
     .cell-r4 { grid-row: 5; } .cell-r5 { grid-row: 6; } .cell-r6 { grid-row: 7; }
     .cell-r7 { grid-row: 8; } .cell-r8 { grid-row: 9; } .cell-r9 { grid-row: 10; }
 
+    /* Adjustments for side cells: stack name + price differently */
+    .cell-bottom .cell-content, .cell-top .cell-content {
+        padding-top: 0;
+    }
+    .cell-bottom .cell-input, .cell-top .cell-input {
+        margin-top: auto;
+    }
+    .cell-bottom .cell-price, .cell-top .cell-price {
+        margin-bottom: 2px;
+    }
+
     /* Legend */
     .legend {
-        max-width: 720px;
+        max-width: 760px;
         margin: 0 auto 32px;
     }
     .legend h3 {
@@ -425,8 +413,7 @@ const rightCells = cases.filter(c => c.side === "right" && c.type !== "corner");
     .legend-items {
         display: flex;
         flex-wrap: wrap;
-        gap: 12px;
-        margin-bottom: 12px;
+        gap: 12px 20px;
     }
     .legend-item {
         display: flex;
@@ -440,11 +427,6 @@ const rightCells = cases.filter(c => c.side === "right" && c.type !== "corner");
         height: 16px;
         border-radius: 4px;
         flex-shrink: 0;
-    }
-    .legend-note {
-        font-size: 0.85rem;
-        color: var(--color-text-light);
-        font-style: italic;
     }
 
     /* Actions */
