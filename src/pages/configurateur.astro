@@ -315,47 +315,38 @@ const cornerCases = cases.filter(c => c.type === "corner");
     .band-left { left: 0; top: 0; bottom: 0; width: 28%; }
     .band-right { right: 0; top: 0; bottom: 0; width: 28%; }
 
-    /* Cell content wrapper — default for all cells */
+    /* Cell content wrapper */
     .cell-content {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         z-index: 2;
         gap: 1px;
+        padding: 2px;
     }
 
-    /* Bottom cells: content below the color band */
-    .cell-bottom .cell-content {
+    /* Cases avec bande de couleur : décaler le contenu hors de la bande */
+    /* Bottom: bande en haut → contenu en bas */
+    .cell-bottom .color-band ~ .cell-content {
         top: 30%;
-        left: 2px;
-        right: 2px;
-        bottom: 2px;
     }
-
-    /* Top cells: content above the color band */
-    .cell-top .cell-content {
-        top: 2px;
-        left: 2px;
-        right: 2px;
+    /* Top: bande en bas → contenu en haut */
+    .cell-top .color-band ~ .cell-content {
         bottom: 30%;
     }
-
-    /* Left cells: content left of the color band */
-    .cell-left .cell-content {
-        top: 2px;
-        left: 2px;
+    /* Left: bande à droite → contenu à gauche */
+    .cell-left .color-band ~ .cell-content {
         right: 30%;
-        bottom: 2px;
     }
-
-    /* Right cells: content right of the color band */
-    .cell-right .cell-content {
-        top: 2px;
+    /* Right: bande à gauche → contenu à droite */
+    .cell-right .color-band ~ .cell-content {
         left: 30%;
-        right: 2px;
-        bottom: 2px;
     }
 
     /* Cell inputs */
